@@ -1,0 +1,225 @@
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #555555;
+  --card: #ffffff;
+  --circle: #f4efe6;
+}
+
+
+body.dark{
+  --bg-dark: #121212;
+  --card-dark: #1E1E1E;
+  --text-white: #FFFFFF;
+  --text-gray: #A3A3A3;
+  --accent-peach: #F4D4B3;
+  --accent-dark: #2A1F1A;
+  --icon-muted: #6B6B6B;
+  --star-gold: #FFB800;
+}
+
+
+
+
+
+
+.easy-steps {
+  padding: 80px 20px;
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.dark .easy-steps {
+ background: #1E1E1E;
+  color: white;
+  border: 1px solid #374151;
+}
+
+
+/* Section Header */
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 660;
+  margin-bottom: 70px;
+  letter-spacing: -0.03em;
+}
+
+/* Grid Container */
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Individual Step Column */
+.step-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Visual Graphic Wrapper */
+.visual-wrapper {
+  position: relative;
+  width: 260px;
+  height: 180px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background Circle */
+.bg-circle {
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  background-color: var(--circle-bg);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+
+
+/* Graphics Layer */
+.ui-graphic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* --- STEP 1: Overlapping Photos --- */
+.photo {
+  position: absolute;
+  background: white;
+  padding: 6px 6px 18px 6px;
+  box-shadow: 0 4px 14px var(--card-shadow);
+  border-radius: 4px;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+.photo-1 { width: 75px; height: 75px; left: 10px; top: 20px; transform: rotate(-8deg); }
+.photo-2 { width: 85px; height: 95px; left: 80px; top: 35px; z-index: 3; }
+.photo-3 { width: 75px; height: 75px; right: 10px; top: 55px; transform: rotate(6deg); }
+
+/* --- STEP 2: Live Rate Rows --- */
+.deal-row {
+  position: absolute;
+  width: 165px;
+  background: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.deal-row img {
+  width: 35px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.deal-lines {
+  flex: 1;
+  margin-left: 10px;
+}
+.line-sm { height: 5px; background: #e5e5e5; border-radius: 2px; margin-bottom: 4px; width: 70%; }
+.line-xs { height: 4px; background: #f0f0f0; border-radius: 2px; width: 45%; }
+.deal-price { font-size: 11px; font-weight: 700; color: #111; }
+
+.row-1 { top: 20px; left: 25px; }
+.row-2 { top: 75px; left: 65px; z-index: 3; border: 1px solid #111; }
+
+/* --- STEP 3: Concierge Panel --- */
+.modal-card {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 200px;
+  background: white;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modal-top { display: flex; gap: 10px; }
+.modal-img { width: 45px; height: 35px; background: #f0f0f0; border-radius: 4px; object-fit: cover; }
+.modal-info { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 5px; }
+.modal-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 2px; }
+.modal-btn { width: 55px; height: 16px; border-radius: 3px; }
+
+/* Typography */
+.step-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+}
+
+.step-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+  max-width: 290px;
+}
+
+
+/*dark mode*/
+
+body.dark .photo {
+  background: #1e293b;
+}
+
+body.dark .deal-row {
+  background: #1e293b;
+  color: var(--text-main);
+}
+
+body.dark .deal-price {
+  color: var(--text-main);
+}
+
+body.dark .modal-card {
+  background: #1e293b;
+}
+
+body.dark .line-sm {
+  background: #334155;
+}
+
+body.dark .line-xs {
+  background: #475569;
+}
+
+body.dark .modal-btn {
+  background: #f8fafc !important;
+}
+
+
+@media (max-width:768px) {
+  .section-title {
+  font-size: 2rem;
+  font-weight: 660;
+  margin-bottom: 70px;
+  letter-spacing: -0.03em;
+}
+}
