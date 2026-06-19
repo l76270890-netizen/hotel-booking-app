@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Websites.css";
 import { Link } from "react-router-dom";
+import { User } from "lucide-react";
 
 function Websites({ favorites = [], toggleFavorite, showFavoritesOnly = false, PROJECT_DATA }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -89,7 +90,15 @@ function Websites({ favorites = [], toggleFavorite, showFavoritesOnly = false, P
                         <span className="card-price-amount">${project.price}</span>
                         <span className="card-price-label"> / night</span>
                       </div>
-                      <button className="hotel-card-btn" onClick={(e) => e.preventDefault()}>
+                      <button className="hotel-card-btn" 
+                      onClick={(e) => {e.preventDefault();
+
+                        if(!User) {
+                          navigate("/login");
+                          return;
+                        }
+                        alert("proceeding to booking...")
+                      }}>
                         Book Now
                       </button>
                     </div>

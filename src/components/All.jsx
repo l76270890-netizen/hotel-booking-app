@@ -59,7 +59,7 @@ export const HOTEL_ROOMS_DATA = [
     rating: 4.7,
     price: 160,
     location: "Costa Rica",
-    images: ["/card7.jpg", "/atomic 1.jpg", "/atomic 3.jpg"],
+    images: ["/card4.jpg", "/atomic 1.jpg", "/atomic 3.jpg"],
     amenities: ["Eco Lodge", "Waterfall Tours", "Canopy Walk", "Organic Meals"],
     specs: { guests: 3, bedrooms: 1, beds: 2, bathrooms: 1 },
     longDescription: "Sleep surrounded by jungle sounds. Guided nature walks, sustainable design, and waterfall swimming pools."
@@ -101,7 +101,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.6,
   price: 295,
   location: "Dubai, UAE",
-  images: ["/card6.jpg", "/atomic 2.jpg", "/card3.jpg"],
+  images: ["/card6.jpg", "/atomic 2.jpg", "/1.jpg"],
   amenities: ["Glass Roof", "Dunebuggy", "Stargazing", "Sunset Lounge"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Luxury in the dunes..."
@@ -115,7 +115,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.6,
   price: 295,
   location: "Dubai, UAE",
-  images: ["/9.jpg", "/card1.jpg", "/card3.jpg"],
+  images: ["/9.jpg", "/11.jpg", "/7.jpg"],
   amenities: ["Glass Roof", "Dunebuggy", "Stargazing", "Sunset Lounge"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Luxury in the dunes..."
@@ -143,7 +143,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.6,
   price: 295,
   location: "Dubai, UAE",
-  images: ["/card9.jpg", "/atomic 4.jpg", "/card3.jpg"],
+  images: ["/card9.jpg", "/atomic 4.jpg", "/atomic 3.jpg"],
   amenities: ["Glass Roof", "Dunebuggy", "Stargazing", "Sunset Lounge"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Luxury in the dunes..."
@@ -153,11 +153,11 @@ export const HOTEL_ROOMS_DATA = [
   slug: "azure-coast-hotel",
   title: "Azure Coast Hotel",
   description: "Ocean luxury escape.",
-  image: "/card7.jpg",
+  image: "/card2.jpg",
   rating: 4.6,
   price: 295,
   location: "Dubai, UAE",
-  images: ["/card2.jpg", "/card1.jpg", "/card3.jpg"],
+  images: ["/card2.jpg", "/10.jpg", "/13.jpg"],
   amenities: ["Glass Roof", "Dunebuggy", "Stargazing", "Sunset Lounge"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Luxury in the dunes..."
@@ -171,7 +171,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.6,
   price: 295,
   location: "Dubai, UAE",
-  images: ["/card5.jpg", "/card1.jpg", "/card3.jpg"],
+  images: ["/card5.jpg", "/10.jpg", "/14.jpg"],
   amenities: ["Glass Roof", "Dunebuggy", "Stargazing", "Sunset Lounge"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Luxury in the dunes..."
@@ -185,7 +185,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.6,
   price: 295,
   location: "Dubai, UAE",
-  images: ["/atomic-4.jpg", "/card8.jpg", "/card3.jpg"],
+  images: ["/6.jpg", "/8.jpg", "/3.jpg"],
   amenities: ["Glass Roof", "Dunebuggy", "Stargazing", "Sunset Lounge"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Luxury in the dunes..."
@@ -207,18 +207,23 @@ const All = ({ favorites, toggleFavorite }) => {
   const navigate = useNavigate();
 const { user } = useContext(AuthContext);
 
-  return (
+   return (
     <div className="hotel-app-container">
       <header className="hotel-header-section">
         <div className="title-header">
+          
+          {/* MOVE THE BACK-LINK INSIDE THE WRAPPER */}
           <div className="header-title-wrapper">
+            <Link to="/" className="view-all-btn-back-link">
+              <span className="back-icon">‹</span> 
+            </Link>
+
             <h1 className="header-main-title">Hotel Booking</h1>
             
-            {/* FIX 1: Heart icon with count badge */}
             <div className="header-heart">
-              <Link to="/saved" className="view-all-btn-back-link">
-              <span className="heart-icon">♡</span>
-             </Link>
+              <Link to="/saved" className="link">
+                <span className="heart-icon">♡</span>
+              </Link>
               {favorites.length > 0 && (
                 <span className="heart-count">{favorites.length}</span>
               )}
@@ -226,10 +231,6 @@ const { user } = useContext(AuthContext);
           </div>
           
           <p className="header-subtitle">Browse our absolute collection of premier accommodations around the globe.</p>
-          
-          <Link to="/" className="view-all-btn-back-link">
-            <span className="back-icon">‹</span> 
-          </Link>
 
           <div className="search-wrapper">
             <span className="search-icon">🔍</span>
@@ -248,6 +249,7 @@ const { user } = useContext(AuthContext);
           </div>
         </div>
       </header>
+
 
       <div className="web-grid">
         {filteredHotels.map((hotel) => {

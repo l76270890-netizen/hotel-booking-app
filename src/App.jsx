@@ -13,6 +13,7 @@ import Settings from "./components/Settings";
 // Page Sections
 import Websites from "./components/Websites";
 import Industry from "./components/Industry";
+import Rating from "./components/Rating";
 import Inspiration from "./components/Inspiration";
 import BookNow from "./components/BookNow";
 import Login from "./components/Login";
@@ -117,6 +118,19 @@ const PROJECT_DATA = [
     amenities: ["Penthouse", "Rooftop Pool", "Concierge", "Wi-Fi"],
     specs: { guests: 4, bedrooms: 3, beds: 3, bathrooms: 2 }
   },
+  {
+    id: 6,
+    slug: "hotel9",
+    title: "Grey Suite Cabins Hotel",
+    description: "A modern property designed to utilizing street-view integration, reduce stress, and direct agent booking systems.",
+    image: "/card2.jpg",
+    rating: 4.7,
+    price: 420,
+    location: "Lagos Island",
+    images: ["/card2.jpg", "/12.jpg", "/download (1).jpg"],
+    amenities: ["Penthouse", "Rooftop Pool", "Concierge", "Wi-Fi"],
+    specs: { guests: 4, bedrooms: 3, beds: 3, bathrooms: 2 }
+  }
 ];
 
 function AppContent() {
@@ -247,6 +261,7 @@ useEffect(() => {
               <Websites favorites={favorites} toggleFavorite={toggleFavorite} PROJECT_DATA={PROJECT_DATA} />
               <Industry />
               <Inspiration />
+              <Rating/>
             </ProtectedRoute>
           }
         />

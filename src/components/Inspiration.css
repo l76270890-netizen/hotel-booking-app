@@ -39,6 +39,7 @@ body.dark{
   color: var(--text);
   margin: 0 0 10px 0;
   letter-spacing: -0.02em;
+  color: #000;
 }
 
 .dark .inspiration-title {

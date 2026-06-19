@@ -142,8 +142,8 @@ background: #121212;
 
 .heart-count {
   position: absolute;
-  top: -6px;
-  left: 1rem;
+  top: -33px;
+  right: 2.2rem;
   background: #FF4B4B;
   color: white;
   font-size: 12px;
@@ -222,7 +222,7 @@ background: #121212;
    width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color:#888;
+  background-color:#fff;
   border: 1px solid #1a1a1a;
   color: var(--primary-brand);
   text-decoration: none;
@@ -230,6 +230,31 @@ background: #121212;
   font-weight: 300;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
+  
+}
+
+
+.dark  
+/* Minimal Modern Back Navigation Button */
+.view-all-btn-back-link {
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color:transparent;
+  border: 1px solid #fff;
+  color: var(--primary-brand);
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 300;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  
 }
 
 
@@ -238,7 +263,62 @@ background: #121212;
   top: -1px;
   right: -2;
   animation: pulse 2s infinite;
+
 }
+
+.dark 
+.back-icon{
+  position: absolute;
+  top: -1px;
+  right: -2;
+  animation: pulse 2s infinite;
+color: #fff;
+}
+
+
+
+
+  /* Fixes the double-stacked, warped heart button */
+  .heart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #1a1a1a;
+    color:  #000;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+    z-index: 99;
+    position: absolute;
+    left:-46px;
+    top:-29px;
+  }
+
+  .dark .heart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    background-color: #121212;
+    border: 1px solid #1a1a1a;
+    color:  #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+    z-index: 99;
+    position: absolute;
+    left:-46px;
+    top:-29px;
+    border: 1px #fff solid;
+  }
 
 
 
@@ -526,105 +606,12 @@ background: #121212;
     display: none;
   }
 
-  /* ── 1. HEADER LOGIC (Clean Side-by-Side Flex Layout) ── */
-  .header-title-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Pushes back button to left, heart to right */
-    width: 100%;
-    position: relative;
-    padding: 10px 0;
-    box-sizing: border-box;
-  }
-
-  /* Fixes the double-stacked, warped back link */
-  .view-all-btn-back-link {
-    top:-5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    font-size: 1.5rem;
-    border: none;
-    text-decoration: none;
-    background-color: transparent; /* Adjust based on your dark/light theme */
-   
-  }
-
-.back-icon{
-  position: absolute;
-  top: 6px;
-  left: 8px;
-  background-color: #ffff;
-  color: #000;
-  border: 1px #000 solid;
-   display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px; 
-    height: 44px;
-    border-radius: 50%;
-}
 
 
-.dark .back-icon{
-  position: absolute;
-  top: 6px;
-  left: 8px;
-  background-color: #121212;
-  color: #fff;
-  border: 1px #ffff solid;
-   display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px; 
-    height: 44px;
-    border-radius: 50%;
-}
 
 
-  /* Fixes the double-stacked, warped heart button */
-  .heart-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px; 
-    height: 44px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 1px solid #1a1a1a;
-    color:  #000;
-    text-decoration: none;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease;
-    z-index: 99;
-    position: absolute;
-    left:320px;
-    top:-5px;
-  }
 
-  .dark .heart-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px; 
-    height: 44px;
-    border-radius: 50%;
-    background-color: #121212;
-    border: 1px solid #1a1a1a;
-    color:  #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease;
-    z-index: 99;
-    position: absolute;
-    left:320px;
-    top:-5px;
-    border: 1px #fff solid;
-  }
+
 
 
 
@@ -747,7 +734,7 @@ background: #121212;
     border-radius: 50px;
     overflow: hidden;
     left: 5%;
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
   /* Floating search bar  */
@@ -793,44 +780,6 @@ background: #121212;
     color: var(--primary-brand);
   }
 
-
-
-
-
-  /*Active heart*/
-  
-.header-heart {
-  position: relative; 
-  display: inline-flex; 
-  align-items: center;
-  justify-content: center;
-  font-size: 34px; /* Increased slightly so the heart shape is wide enough to frame the number text */
-  color: #be1c1c;
-}
-
-/* 👉 FIXED: Centered perfectly directly over the top of the heart shape body */
-.heart-count {
-  position: absolute;
-  /* Centering formula over parent wrapper boundaries */
-  top: -1px; /* Moves the badge slightly above the top edge */
-  left: 19.5rem; 
-  transform: translate(-50%, -50%); 
-  
-  color: white; /* Contrast text color over the dark red heart background */
-  font-size: 11px; 
-  font-weight: 800; /* Extra bold thickness for clean readability over backgrounds */
-  
-  /* Transparent background structural settings since the heart itself acts as the backdrop fill */
-  background: red; 
-  border: none; 
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none; /* Allows click events to pass directly through to the main button */
-  z-index: 2; 
-}
-
 .card-favorite-btn {
   position: absolute;
   top: 12px;
@@ -855,4 +804,150 @@ background: #121212;
 }
 
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .hotel-app-container {
+    padding: 24px 16px;
+  }
+
+  .header-main-title {
+    display: none !important; /* Hides text on mobile */
+  }
+
+  .header-subtitle {
+    display: none !important;
+  }
+
+  /* ── 1. HEADER ROW LAYOUT ── */
+  /* This container acts as the row, pushing back-link to left, heart-icon to right */
+  .header-title-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important; 
+    width: 100% !important;
+    position: relative !important;
+    padding: 10px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── 2. BACK LINK ACTION TARGET ── */
+  .view-all-btn-back-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+    position: relative !important;
+    width: 44px !important;
+    height: 44px !important;
+    top: unset !important;
+    left: unset !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* The actual styled circle button for Back */
+  .back-icon {
+    position: relative !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px #000000 solid !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important; 
+    height: 44px !important;
+    border-radius: 50% !important;
+    font-size: 1.75rem !important;
+    top: unset !important;
+    left: unset !important;
+  }
+
+  .dark .back-icon {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+    border: 1px #ffffff solid !important;
+  }
+
+  /* ── 3. LIKED FAVORITES LAYER WRAPPER ── */
+  .header-heart {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Link tag context inside heart */
+  .header-heart .link {
+    text-decoration: none !important;
+  }
+
+  /* The actual styled circle button for Heart */
+  .heart-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important; 
+    height: 44px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    border: 1px solid #1a1a1a !important;
+    color: #000000 !important;
+    font-size: 1.5rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transition: transform 0.2s ease !important;
+    position: relative !important;
+    left: unset !important;
+    top: unset !important;
+    z-index: 1 !important;
+  }
+
+  .dark .heart-icon {
+    background-color: #121212 !important;
+    border: 1px #ffffff solid !important;
+    color: #ffffff !important;
+  }
+
+  /* ── 4. NOTIFICATION BADGE PLACEMENT ── */
+  /* Keeps the badge cleanly overlayed on top right edge of the circle button */
+  .heart-count {
+    position: absolute !important;
+    top: -4px !important;
+    right: -4px !important;
+    background: #ff3b30 !important;
+    color: white !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    border: 2px solid white !important;
+    border-radius: 50% !important;
+    min-width: 20px !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+    left: unset !important;
+    transform: none !important;
+  }
 }

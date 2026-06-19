@@ -20,7 +20,6 @@ body.dark{
 }
 
 
-
 .hotel-footer {
   background-color: var(--footer-bg);
   color: var(--footer-text-main);
@@ -62,26 +61,37 @@ body.dark{
 }
 
 /* Inline Newsletter Form */
+/* 👉 PRO FIX: Converted to a pill design that handles rounded corners perfectly without alignment overlapping issues */
 .newsletter-form {
   display: flex;
   max-width: 320px;
-  height: 42px;
+  height: 46px; /* Increased slightly for mobile friendly click target scale */
+  background-color: #1a1a1a;
+  border: 1px solid var(--footer-border);
+  border-radius: 50px; /* High-end rounded edge look */
+  padding: 3px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.newsletter-form:focus-within {
+  border-color: var(--footer-accent);
 }
 
 .newsletter-form input {
   flex: 1;
-  background-color: #1a1a1a;
-  border: 1px solid var(--footer-border);
-  border-right: none;
-  border-radius: 4px 0 0 4px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50px 0 0 50px;
   padding: 0 16px;
   color: var(--footer-text-main);
   font-size: 0.88rem;
   outline: none;
+  width: 100%;
 }
 
 .newsletter-form input::placeholder {
-  color: #555555;
+  color: #6b7280;
 }
 
 .newsletter-form button {
@@ -90,14 +100,18 @@ body.dark{
   border: none;
   font-weight: 600;
   font-size: 0.88rem;
-  padding: 0 16px;
-  border-radius: 0 4px 4px 0;
+  padding: 0 22px;
+  border-radius: 50px; /* Symmetric internal rounding configuration */
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .newsletter-form button:hover {
   background-color: #c29263;
+}
+
+.newsletter-form button:active {
+  transform: scale(0.96);
 }
 
 /* Links Columns Styling */
@@ -125,11 +139,13 @@ body.dark{
   font-size: 0.9rem;
   color: var(--footer-text-muted);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
 }
 
 .footer-links-column a:hover {
   color: var(--footer-text-main);
+  padding-left: 4px; /* Fluid professional hover nudge interaction */
 }
 
 /* Bottom Bar Styling */
@@ -160,14 +176,14 @@ body.dark{
   font-size: 0.85rem;
   color: var(--footer-text-muted);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .footer-legal-links a:hover {
   color: var(--footer-text-main);
 }
 
-
-/*dark mode*/
+/* Dark Mode Theme Mapping overrides */
 .dark .hotel-footer {
   background-color: #1E1E1E;
 }
@@ -179,16 +195,52 @@ body.dark{
   color: #cbd5e1;
 }
 
-
-
-/* Responsiveness Configuration */
+/* ==========================================================
+   UPDATED MOBILE RESPONSIVENESS CONFIGURATION
+   ========================================================== */
 @media (max-width: 768px) {
+  .hotel-footer {
+    padding: 50px 16px 30px 16px;
+  }
+
+  /* 👉 FIXED: Shifts your grids to elegant single stacked format safely */
   .footer-container {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
+    padding-bottom: 40px;
   }
+
+  .footer-brand-section {
+    align-items: flex-start;
+  }
+
+  .footer-brand-desc {
+    max-width: 100%; /* Allows paragraph text to span cleanly on slim viewports */
+  }
+
+  /* 👉 FIXED: Expansion fluid layout parameters to scale form full-width on mobile */
+  .newsletter-form {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .footer-links-column h4 {
+    margin-bottom: 12px;
+  }
+
+  /* 👉 FIXED: Reverses order so copyright notice drops cleanly underneath legal lists */
   .footer-bottom-bar {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+    padding-top: 24px;
+  }
+
+  .footer-legal-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px 20px; /* Smart wrap padding spacing layout */
   }
 }

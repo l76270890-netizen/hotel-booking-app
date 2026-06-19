@@ -386,7 +386,7 @@ input:checked + .toggle-slider:before {
 .section-title {
   font-size:25px;
   font-weight: 600;
-  color: #fff;
+  color: #000;
   margin-bottom: 32px;
   text-align:center;
 }

@@ -270,6 +270,14 @@ body.dark{
 .offer-text p {
   margin: 0;
   font-size: 0.9rem;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+
+ .dark .offer-text p {
+  margin: 0;
+  font-size: 0.9rem;
   color: #cccc;
   line-height: 1.4;
 }
@@ -283,12 +291,7 @@ body.dark{
 
 /*/* Mobile view adjustments (max-width: 768px) */
 @media (max-width: 768px) {
-  /* Remove bottom padding from the container */
-  .hotel-detail-container {
-    position: relative;
-    margin: 0 auto;
-    padding: 0;
-  }
+
 
     /* Clean row layout floating directly over the main image */
   .detail-header {
@@ -364,17 +367,8 @@ body.dark{
     gap: 0; 
   }
 
-  /* Full bleed top image */
-  .main-image-container {
-    padding: 0; /* Full bleed edge-to-edge layout looks better on mobile screens */
-  }
-  
-  .main-image {
-    height: 362px;       /* Shorter height profile matches mobile viewports perfectly */
-    border-radius: 0 0 16px 16px; /* Bottom-only curves look amazing on mobile scrolls */
-    margin-top: -11px; /* Remove extra spacing at the top the main image */
-  }
 
+  
   /* Uniform padding for content blocks */
   .hotel-title,
   .hotel-location,
@@ -440,11 +434,6 @@ body.dark{
 }
 
 
-.booking-sticky-card{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  margin-top: -50px;
-}
 
 /* What We Offer Grid */
 .offers-section {
@@ -488,15 +477,278 @@ body.dark{
 
 /*button*/
 .book-btn {
-  width: 110%;
+  width: 60%;
   background: #F4D4B3;
   color: #131313;
   border: none;
-  padding: 14px;
+  padding: 18px;
   border-radius: 50px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
+
+  .hotel-detail-container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) {
+  .hotel-detail-container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ── 1. FLOATING NAVIGATION ROW OVER IMAGE ── */
+  /* 👉 FIXED: Forces items to opposite sides horizontally and centers vertically */
+  .detail-header {
+    position: absolute !important;
+    top: 16px !important;
+    left: 0 !important;
+    right: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important; /* Spreads buttons to absolute opposite sides */
+    padding: 0 16px !important; /* Uniform gap away from the phone screen edges */
+    box-sizing: border-box !important;
+    z-index: 10 !important;
+    width: 100% !important;
+  }
+
+  /* Back Button Layout Circle */
+  .back-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    background-color: #ffffff !important;
+    border: 1px #131313 solid !important;
+    width: 44px !important; 
+    height: 44px !important;
+    font-size: 24px !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    box-shadow: var(--shadow-sm) !important;
+    color: #131313 !important;
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    right: unset !important;
+  }
+
+  /* Heart Container Wrapper */
+  .detail-heart-wrapper {
+    display: inline-flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    position: relative !important;
+  }
+
+  /* 👉 FIXED: Removed left offsets entirely to keep button in its natural place on the right */
+  .detail-heart-icon {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    right: unset !important;
+    background: #ffffff !important;
+    border: 1px #131313 solid !important;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 20px !important;
+    color: #131313 !important;
+    cursor: pointer !important;
+    box-shadow: var(--shadow-md) !important;
+    transition: var(--transition-smooth) !important;
+    z-index: 3 !important;
+  }
+  
+
+  .detail-heart-icon.active {
+    color: #ff385c !important;
+    background-color: #fff0f2 !important;
+  }
+  
+  /* ... Keep your remaining layout code for images and booking card unchanged ... */
 }
+
+  /* ── 2. IMAGES & GALLERY LOGIC ── */
+  .detail-grid { 
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+    width: 100%;
+  }
+
+  .main-image-container,
+  .main-image-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+  }
+  
+  /* 👉 FIXED: Main Image scales responsively without cropping distortions */
+  .main-image {
+    width: 100% !important;
+    height: 360px !important;       
+    object-fit: cover !important;
+    border-radius: 0 0 16px 16px !important; 
+    margin-top: 0 !important; 
+    display: block;
+  }
+
+  /* 👉 FIXED: Horizontal thumbnail grid layout with scrolling support if needed */
+  .thumbnail-row {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    padding: 16px 20px !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    width: 100%;
+  }
+
+  .thumbnail-row .thumbnail {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .thumbnail-row .thumbnail.selected {
+    border-color: #131313;
+  }
+
+  /* ── 3. CONTENT COMPONENT LAYOUT PADDING ── */
+  .hotel-title,
+  .hotel-location,
+  .rating-badge,
+  .divider {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hotel-title {
+    margin: 16px 0 8px 0 !important;
+    font-size: 1.6rem !important;
+  }
+
+  /* ── 4. STICKY BOOKING CARD BAR & BOOK NOW ACTION ── */
+  /* 👉 FIXED: Implemented a responsive 2-column distribution layout container */
+  .booking-sticky-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background-color: transparent !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    padding: 26x 20px !important;
+    margin: 20px !important; 
+    box-sizing: border-box !important;
+    position: relative !important;
+    top: unset !important;
+    box-shadow: var(--shadow-lg) !important;
+  }
+
+
+  .dark   .booking-sticky-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background-color: transparent !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    padding: 26px 20px !important;
+    margin: 20px !important; 
+    box-sizing: border-box !important;
+    position: relative !important;
+    top: -17px !important;
+    box-shadow: var(--shadow-lg) !important;
+  }
+
+  .booking-card-header {
+    margin: 0 !important;
+  }
+
+  .booking-card-header h2 {
+    font-size: 1.3rem !important;
+    margin: 0 !important;
+  }
+
+
+  /* Hidden / Restructured components blocks */
+  .specs-row,
+  .offers-section {
+    display: none !important;
+  }
+
+  .description-section,
+  .amenities-section {
+    display: block !important;
+    margin: 20px !important;
+    padding: 0 !important;
+  }
+
+ 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
