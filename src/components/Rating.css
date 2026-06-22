@@ -238,6 +238,12 @@
     width: 110px; /* Slims font container size footprint on screens under 768px */
   }
 
+  .dark  
+  .attr-name {
+    width: 110px; /* Slims font container size footprint on screens under 768px */
+    color: #fff;
+  }
+
   .review-card {
     padding: 16px;
   }

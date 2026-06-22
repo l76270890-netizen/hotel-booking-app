@@ -666,7 +666,7 @@ body.dark{
     margin: 20px !important; 
     box-sizing: border-box !important;
     position: relative !important;
-    top: -90px !important;
+    top: -20px !important;
     box-shadow: var(--shadow-lg) !important;
   }
 
@@ -716,7 +716,7 @@ body.dark{
     font-size: 1.4rem !important;
     grid-template-columns: repeat(3, 1fr);
       position: relative;
-    bottom:30px;
+    bottom:1px;
   }
 
 
@@ -726,7 +726,8 @@ body.dark{
     font-size: 1.4rem !important;
     grid-template-columns: repeat(3, 1fr);
       position: relative;
-    bottom:10px;
+    bottom:1px;
+    gap: 10px;
   }
 
   .spec-badge{

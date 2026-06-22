@@ -70,9 +70,11 @@ DARK MODE
   color: #1e293b;
   margin: 0;
 }
-
 .hamburger-menu-btn {
-  background: none;
+  display: inline-flex; /* Forces items inside to center perfectly */
+  align-items: center; /* Vertical alignment */
+  justify-content: center; /* Horizontal alignment */
+  background: transparent;
   border: 1px #000 solid;
   font-size: 24px;
   color: #334155;
@@ -80,19 +82,17 @@ DARK MODE
   border-radius: 50%;
   width: 44px;
   height: 44px;
+  box-sizing: border-box; /* Prevents padding from breaking the 44px circle layout */
+  flex-shrink: 0; /* Prevents mobile flexbox layouts from crushing the button shape */
+  padding: 0; /* Standardizes mobile browser default button padding resets */
+  outline: none;
 }
 
-
-.dark 
-.hamburger-menu-btn {
-  background: none;
-  border: 1px #fff solid;
-  font-size: 24px;
-  color: #334155;
-  cursor: pointer;
-   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+/* Dark Mode fixes */
+.dark .hamburger-menu-btn {
+  border-color: #ffffff;
+  color: #ffffff; /* FIXED: Overrode the dark slate text color to match the border */
+  background: transparent;
 }
 
 
@@ -372,49 +372,46 @@ DARK MODE
 }
 
 
-
-/*successful booking*/
+/* ── SUCCESS SCREEN CONTAINER ── */
 .success-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #f4f7f6;
-  padding: 20px;
-  font-family: system-ui, -apple-system, sans-serif;
+  justify-content: center;
+  min-height: 100vh; /* Takes full mobile screen height */
+  min-height: 100dvh; /* Dynamic viewport height fixes mobile browser address bar gaps */
+  width: 100%;
+  background-color: #f8fafc; /* Crisp light gray background */
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.dark  .success-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/* Dark Mode support wrapper (If you have a .dark class on your body) */
+.dark .success-container {
   background-color: #131313;
-  padding: 20px;
-  font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* The card structure */
+/* ── MOBILE OPTIMIZED SUCCESS CARD ── */
 .success-card {
-  background: #ffff;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px 24px;
   text-align: center;
-  max-width: 450px;
   width: 100%;
+  max-width: 360px; /* Perfect width constraints for all phone screens */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* Smooth animation entry pop */
+  animation: cardPopUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
 }
 
-
-.dark /* The card structure */
-.success-card {
-  background: #1a1a1a;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  max-width: 450px;
-  width: 100%;
+.dark .success-card {
+  background: #1e1e1e;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -433,37 +430,76 @@ DARK MODE
   margin: 0 auto 24px auto;
 }
 
-/* Typography styling */
+/* ── TYPOGRAPHY ── */
 .success-card h2 {
-  color: #1a1a1a;
-  font-size: 24px;
-  margin-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 12px 0 8px 0;
+  line-height: 1.2;
+}
+
+.dark .success-card h2 {
+  color: #ffffff;
 }
 
 .success-message {
-  color: #666666;
-  font-size: 16px;
+  font-size: 0.95rem;
+  color: #64748b;
   line-height: 1.5;
-  margin-bottom: 32px;
+  margin: 0 0 28px 0;
+  padding: 0 8px;
 }
 
-
-.dark  .success-message {
-  color: #ccc;
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 32px;
+.dark .success-message {
+  color: #2c5691;
 }
-
 
 .success-message strong {
-  color: #1a1a1a;
+  color: #0f172a;
+  font-weight: 600;
 }
 
+.dark .success-message strong {
+  color: #f1f5f9;
+}
 
-.dark  
-.success-message strong {
-  color: #0071c2;
+/* ── FULL WIDTH BOTTOM NAVIGATION BUTTON ── */
+.primary-btn {
+  width: 100%;
+  background: #F4D4B3; /* Matches your premium brand colors */
+  color: #131313;
+  border: none;
+  padding: 16px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  user-select: none;
+  outline: none;
+}
+
+.primary-btn:hover {
+  background: #ecd0b1;
+}
+
+/* Instant haptic-touch physical response when tapped on smaller phone interfaces */
+.primary-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── KEYFRAME ENTRY POP ANIMATION ── */
+@keyframes cardPopUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 
