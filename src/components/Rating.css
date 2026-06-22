@@ -124,6 +124,17 @@
   margin-bottom: 16px;
 }
 
+
+.dark  
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+
 .user-profile-meta {
   display: flex;
   align-items: center;
@@ -167,8 +178,8 @@
 /* ── 3. DARK MODE EXTENSIONS OVERRIDES ── */
 .dark .rating-overview-grid,
 .dark .review-card {
-  background-color: #1e293b;
-  border-color: #334155;
+  background-color: #1a1a1a;
+  border-color: #ccc;
 }
 
 .dark .progress-bar-track {

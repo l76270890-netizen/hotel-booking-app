@@ -491,12 +491,6 @@ body.dark{
 
 
 
-
-
-
-
-
-
   .hotel-detail-container {
     position: relative;
     margin: 0 auto;
@@ -609,32 +603,34 @@ body.dark{
   /* 👉 FIXED: Main Image scales responsively without cropping distortions */
   .main-image {
     width: 100% !important;
-    height: 360px !important;       
+    height: 340px !important;       
     object-fit: cover !important;
     border-radius: 0 0 16px 16px !important; 
     margin-top: 0 !important; 
     display: block;
   }
 
-  /* 👉 FIXED: Horizontal thumbnail grid layout with scrolling support if needed */
   .thumbnail-row {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 10px !important;
-    padding: 16px 20px !important;
-    box-sizing: border-box !important;
-    overflow-x: auto !important;
-    width: 100%;
-  }
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important; /* Centers thumbnails */
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
+  width: 100%;
+}
 
-  .thumbnail-row .thumbnail {
-    width: 100px !important;
-    height: 100px !important;
-    object-fit: cover !important;
-    border-radius: 8px !important;
-    cursor: pointer;
-    border: 2px solid transparent;
-  }
+.thumbnail-row .thumbnail {
+  width: 110px !important;
+  height: 100px !important;
+  object-fit: cover !important;
+  border-radius: 9px !important;
+  border: 2px solid transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: static !important; /* Remove bottom offset */
+}
 
   .thumbnail-row .thumbnail.selected {
     border-color: #131313;
@@ -651,8 +647,9 @@ body.dark{
   }
 
   .hotel-title {
-    margin: 16px 0 8px 0 !important;
-    font-size: 1.6rem !important;
+    margin: 1px 0 8px 0 !important;
+    font-size: 1.4rem !important;
+    
   }
 
   /* ── 4. STICKY BOOKING CARD BAR & BOOK NOW ACTION ── */
@@ -665,11 +662,11 @@ body.dark{
     background-color: transparent !important;
     border: 1px solid #e2e8f0 !important;
     border-radius: 16px !important;
-    padding: 26x 20px !important;
+    padding: 26px 20px !important;
     margin: 20px !important; 
     box-sizing: border-box !important;
     position: relative !important;
-    top: unset !important;
+    top: -90px !important;
     box-shadow: var(--shadow-lg) !important;
   }
 
@@ -679,14 +676,14 @@ body.dark{
     flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
-    background-color: transparent !important;
+    background-color: #131313 !important;
     border: 1px solid #e2e8f0 !important;
     border-radius: 16px !important;
     padding: 26px 20px !important;
     margin: 20px !important; 
     box-sizing: border-box !important;
     position: relative !important;
-    top: -17px !important;
+    top: -20px !important;
     box-shadow: var(--shadow-lg) !important;
   }
 
@@ -701,19 +698,44 @@ body.dark{
 
 
   /* Hidden / Restructured components blocks */
-  .specs-row,
-  .offers-section {
+ 
+  .offers-section{
     display: none !important;
   }
 
-  .description-section,
-  .amenities-section {
+  .description-section {
     display: block !important;
     margin: 20px !important;
     padding: 0 !important;
+    
   }
 
- 
+  
+  .specs-row {
+    display: grid;
+    font-size: 1.4rem !important;
+    grid-template-columns: repeat(3, 1fr);
+      position: relative;
+    bottom:30px;
+  }
+
+
+  .dark  
+  .specs-row {
+    display: grid;
+    font-size: 1.4rem !important;
+    grid-template-columns: repeat(3, 1fr);
+      position: relative;
+    bottom:10px;
+  }
+
+  .spec-badge{
+    background-color: #f2efef;
+    font-size: 10px;
+    text-align: center;
+    padding: 8px 10px;
+    margin-top: 10px;
+  }
 
 }
 

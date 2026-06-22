@@ -92,45 +92,35 @@ const PROJECT_DATA = [
     amenities: ["Kitchen", "Wi-Fi", "Parking"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 }
   },
+  
   {
     id: 7,
     slug: "hotel7",
     title: "Sunset Ridge Cabins",
-    description: "A modern property search tool utilizing street-view integration, virtual 3D tours, and direct agent booking systems.",
+    description: "A stunning coastal escape perched perfectly to capture Nigeria’s finest golden hours. It blends rustic cabin warmth with modern glass architecture, offering panoramic Atlantic ocean views and private sun lounges.",
     image: "/card6.jpg",
     rating: 4.7,
     price: 420,
     location: "Lagos Island",
     images: ["/card6.jpg", "/15.jpg", "/download (1).jpg"],
-    amenities: ["Penthouse", "Rooftop Pool", "Concierge", "Wi-Fi"],
+    amenities: ["Ocean View Balcony", "Private Hot Tub", "Beach Front Access", "Cocktail Bar"],
     specs: { guests: 4, bedrooms: 3, beds: 3, bathrooms: 2 }
   },
   {
-    id: 6,
-    slug: "hotel8",
-    title: "Ridge Cabins Hotel",
-    description: "A modern property search tool utilizing street-view integration, virtual 3D tours, and direct agent booking systems.",
-    image: "/card8.jpg",
-    rating: 4.7,
-    price: 420,
-    location: "Lagos Island",
-    images: ["/card8.jpg", "/15.jpg", "/download (1).jpg"],
-    amenities: ["Penthouse", "Rooftop Pool", "Concierge", "Wi-Fi"],
-    specs: { guests: 4, bedrooms: 3, beds: 3, bathrooms: 2 }
-  },
-  {
-    id: 6,
+    id: 9, // Fixed duplicate ID
     slug: "hotel9",
     title: "Grey Suite Cabins Hotel",
-    description: "A modern property designed to utilizing street-view integration, reduce stress, and direct agent booking systems.",
+    description: "A sophisticated wellness haven engineered with soundproof acoustic glass and minimalist monochrome designs. Perfectly curated to reduce stress, featuring state-of-the-art smart room tech and air purification.",
     image: "/card2.jpg",
     rating: 4.7,
     price: 420,
     location: "Lagos Island",
     images: ["/card2.jpg", "/12.jpg", "/download (1).jpg"],
-    amenities: ["Penthouse", "Rooftop Pool", "Concierge", "Wi-Fi"],
+    amenities: ["Infrared Sauna", "Smart Room Automation", "Yoga Studio", "Acoustic Soundproofing"],
     specs: { guests: 4, bedrooms: 3, beds: 3, bathrooms: 2 }
   }
+
+
 ];
 
 function AppContent() {

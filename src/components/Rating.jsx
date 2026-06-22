@@ -20,7 +20,7 @@ const Rating = () => {
     {
       id: 1,
       user: "Sarah M.",
-      avatar: "public/Testimonial 2.jpeg",
+      avatar: "/Testimonial 2.jpeg",
       date: "June 2026",
       score: 5.0,
       comment: "Absolutely stunning property! The view from the infinity pool was breathtaking and the room service felt incredibly bespoke. Will definitely come back next holiday season."
@@ -28,7 +28,7 @@ const Rating = () => {
     {
       id: 2,
       user: "David K.",
-      avatar: "public/Testimonial 3.jpeg",
+      avatar: "/Testimonial 3.jpeg",
       date: "May 2026",
       score: 4.5,
       comment: "Very clean rooms and exceptionally polite staff. Location is perfect for exploring local hub restaurants, though the check-in queue was slightly slow during peak hours."
@@ -37,8 +37,8 @@ const Rating = () => {
     {
       id: 3,
       user: "Amanda W.",
-      avatar: "public/Testimonial 4.jpeg",
-      date: "May 2026",
+      avatar: "/Testimonial 4.jpeg",
+      date: "January 2026",
       score: 4.5,
       comment: "Very clean rooms and exceptionally polite staff. Location is perfect for exploring local hub restaurants, though the check-in queue was slightly slow during peak hours."
     },
@@ -46,8 +46,8 @@ const Rating = () => {
     {
       id: 4,
       user: "John M.",
-      avatar: "public/Testimonials 1.jpeg",
-      date: "May 2026",
+      avatar: "/testimonials 1.jpeg",
+      date: "March 2026",
       score: 4.5,
       comment: "Very clean rooms and exceptionally polite staff. Location is perfect for exploring local hub restaurants, though the check-in queue was slightly slow during peak hours."
     }

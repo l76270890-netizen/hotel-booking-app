@@ -99,10 +99,6 @@ const handleDeleteAccount = async () => {
 };
 
 
-
-
-
-
 return (
   <div className="settings-page-wrapper">
     <div className="settings-container">
@@ -137,63 +133,101 @@ return (
 
           {/* KEEP ALL YOUR EXISTING SECTIONS HERE */}
           {/* Personal Profile */}
-          <section className="settings-section">
-          <div className="section-title">Personal Profile</div>
-          <div className="profile-card">
-            <div className="profile-avatar-group">
-              {profile.avatar ? (
-                <img
-                  src={profile.avatar}
-                  alt="Profile"
-                  className="profile-avatar-img"
-                />
-              ) : (
-                <div className="profile-avatar-placeholder">
-                  {profile.name ? profile.name.split(' ').filter(Boolean).map(n => n[0]).join('').toUpperCase() : "G"}
-                </div>
-              )}
+         <div className="profile-card">
 
-              <input
-                type="file"
-                id="avatar-upload"
-                accept="image/*"
-                onChange={handleImageChange}
-                style={{ display: 'none' }}
-              />
-              <label htmlFor="avatar-upload" className="change-avatar-btn">
-                Change Photo
-              </label>
-            </div>
-            
-            <div className="settings-input-group">
-              <label>Full Name</label>
-              <input 
-                type="text" 
-                value={profile.name} 
-                onChange={(e) => setProfile({...profile, name: e.target.value})} 
-              />
-            </div>
+  <div className="profile-header">
 
-            <div className="settings-input-row">
-              <div className="settings-input-group">
-                <label>Email Address</label>
-                <input 
-                  type="email" 
-                  value={profile.email} 
-                  onChange={(e) => setProfile({...profile, email: e.target.value})} 
-                />
-              </div>
-              <div className="settings-input-group">
-                <label>Phone Number</label>
-                <input 
-                  type="text" 
-                  value={profile.phone} 
-                  onChange={(e) => setProfile({...profile, phone: e.target.value})} 
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+    <div className="profile-avatar-wrapper">
+      {profile.avatar ? (
+        <img
+          src={profile.avatar}
+          alt="Profile"
+          className="profile-avatar-img"
+        />
+      ) : (
+        <div className="profile-avatar-placeholder">
+          {profile.name
+            ? profile.name
+                .split(" ")
+                .filter(Boolean)
+                .map((n) => n[0])
+                .join("")
+                .toUpperCase()
+            : "G"}
+        </div>
+      )}
+
+      <label htmlFor="avatar-upload" className="camera-badge">
+        📷
+      </label>
+
+      <input
+        type="file"
+        id="avatar-upload"
+        accept="image/*"
+        onChange={handleImageChange}
+        hidden
+      />
+    </div>
+
+    <h2>{profile.name || "Guest User"}</h2>
+    <p>{profile.email || "No email added"}</p>
+
+    <span className="profile-status">
+      ✨ Premium Traveler
+    </span>
+
+  </div>
+
+  
+
+  <div className="settings-input-group">
+    <label>Full Name</label>
+    <input
+      type="text"
+      value={profile.name}
+      onChange={(e) =>
+        setProfile({
+          ...profile,
+          name: e.target.value,
+        })
+      }
+    />
+  </div>
+
+  <div className="settings-input-row">
+
+    <div className="settings-input-group">
+      <label>Email Address</label>
+      <input
+        type="email"
+        value={profile.email}
+        onChange={(e) =>
+          setProfile({
+            ...profile,
+            email: e.target.value,
+          })
+        }
+      />
+    </div>
+
+    <div className="settings-input-group">
+      <label>Phone Number</label>
+      <input
+        type="text"
+        value={profile.phone}
+        onChange={(e) =>
+          setProfile({
+            ...profile,
+            phone: e.target.value,
+          })
+        }
+      />
+    </div>
+
+  </div>
+
+</div>
 
 
           {/* Booking Preferences */}
