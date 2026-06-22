@@ -532,15 +532,15 @@ body.dark{
     justify-content: center !important;
     text-decoration: none !important;
     background-color: #ffffff !important;
-    border: 1px #131313 solid !important;
-    width: 44px !important; 
-    height: 44px !important;
+    width: 35px !important; 
+    height: 35px !important;
     font-size: 24px !important;
     border-radius: 50% !important;
     cursor: pointer !important;
     box-shadow: var(--shadow-sm) !important;
     color: #131313 !important;
     position: relative !important;
+     border: 1px transparent solid !important;
     top: unset !important;
     left: unset !important;
     right: unset !important;
@@ -549,8 +549,8 @@ body.dark{
   /* Heart Container Wrapper */
   .detail-heart-wrapper {
     display: inline-flex !important;
-    width: 44px !important;
-    height: 44px !important;
+    width: 35px !important;
+    height: 35px !important;
     position: relative !important;
   }
 
@@ -561,11 +561,11 @@ body.dark{
     left: unset !important;
     right: unset !important;
     background: #ffffff !important;
-    border: 1px #131313 solid !important;
     border-radius: 50% !important;
-    width: 44px !important;
-    height: 44px !important;
+    width: 35px !important;
+    height: 34px !important;
     display: flex !important;
+    border: 1px transparent solid !important;
     align-items: center !important;
     justify-content: center !important;
     font-size: 20px !important;

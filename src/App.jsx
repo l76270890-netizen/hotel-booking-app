@@ -28,7 +28,7 @@ const PROJECT_DATA = [
   {
     id: 1,
     slug: "hotel1",
-    title: "Horizon Peak Resort",
+    title: "Radisson Blu Hotel",
     description: "A warm, cozy aesthetic featuring online ordering real-time workout metrics, interactive progress charts.",
     image: "2.jpg",
     rating: 4.6,
@@ -42,12 +42,12 @@ const PROJECT_DATA = [
   {
     id: 2,
     slug: "hotel2",
-    title: "Royal Palm suites",
+    title: "The Delborough Lagos",
     description: "A dark-mode dashboard showcasing real-time workout metrics, interactive progress charts, and personalized goal tracking.",
     image: "/4.jpg",
     rating: 4.8,
     price: 180,
-    location: "Abuja, Nigeria",
+    location: "Lagos, Nigeria",
     images: ["/4.jpg", "/atomic 2.jpg", "/card4.jpg"],
     amenities: ["Gym", "Spa", "Wi-Fi", "Restaurant"],
     specs: { guests: 2, bedrooms: 1, beds: 2, bathrooms: 1 },
@@ -56,7 +56,7 @@ const PROJECT_DATA = [
   {
     id: 3,
     slug: "hotel3",
-    title: "Saguna Hotel",
+    title: "Golden Tulip Hotel",
     description: "A minimalist retail experience built with rapid filtering, high-resolution lookbooks, and a one-click checkout system.",
     image: "/6.jpg",
     rating: 4.3,
@@ -82,7 +82,7 @@ const PROJECT_DATA = [
   {
     id: 5,
     slug: "hotel5",
-    title: "Silver Fox Hotel",
+    title: "Carlton Swiss Grand Hotel",
     description: "A clean food blog offering intelligent portion scaling, automated grocery lists, and step-by-step video playback.",
     image: "/card7.jpg",
     rating: 4.5,
