@@ -30,7 +30,7 @@ body.dark{
 .dark .inspiration-section {
  background: #121212;
   color: white;
-  border: 1px solid #374151;
+  border: none;
 }
 
 .inspiration-title {

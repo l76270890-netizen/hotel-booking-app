@@ -37,9 +37,9 @@ body.dark{
 }
 
 .dark .easy-steps {
- background: #1E1E1E;
+ background: #131313;
   color: white;
-  border: 1px solid #374151;
+  border: none;
 }
 
 

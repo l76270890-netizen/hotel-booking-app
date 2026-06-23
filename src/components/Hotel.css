@@ -110,8 +110,8 @@ background: #121212;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background-color: var(--card-background);
   border: 1px solid #1a1a1a;
@@ -634,7 +634,7 @@ color: #fff;
     flex-direction: row !important;
     height: 140px !important;
     max-height: 140px !important;
-    border: 1px #1a1a1a solid;
+    border: 1px transparent solid;
     border-radius: var(--border-radius-md) !important;
     box-shadow: var(--shadow-sm) !important;
     overflow: hidden !important;
@@ -647,7 +647,7 @@ color: #fff;
     flex-direction: row !important;
     height: 140px !important;
     max-height: 140px !important;
-    border: 1px #cccc solid;
+    border:1px #2d2d2d solid;
     border-radius: var(--border-radius-md) !important;
     box-shadow: var(--shadow-sm) !important;
     overflow: hidden !important;
@@ -858,8 +858,26 @@ color: #fff;
     text-decoration: none !important;
     background-color: transparent !important;
     position: relative !important;
-    width: 44px !important;
-    height: 44px !important;
+    width: 35px !important;
+    height: 35px !important;
+    background-color: #fff !important;
+    top: unset !important;
+    left: unset !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+
+  .dark   .view-all-btn-back-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+    position: relative !important;
+    width: 35px !important;
+    height: 35px !important;
+    background-color: transparent;
     top: unset !important;
     left: unset !important;
     border: none !important;
@@ -869,7 +887,7 @@ color: #fff;
   /* The actual styled circle button for Back */
   .back-icon {
     position: relative !important;
-    background-color: #ffffff !important;
+    background-color: transparent !important;
     color: #000000 !important;
     border: 1px transparent solid !important;
     display: flex !important;
@@ -879,7 +897,7 @@ color: #fff;
     height: 35px !important;
     border-radius: 50% !important;
     font-size: 1.75rem !important;
-    top: unset !important;
+    top: -3.4px !important;
     left: unset !important;
   }
 

@@ -1,3 +1,24 @@
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+  --muted: #6b7280;
+  --btn-bg: #111827;
+  --btn-text: #ffffff;
+}
+body.dark{
+  --bg-dark: #121212;
+  --card-dark: #1E1E1E;
+  --text-white: #FFFFFF;
+  --text-gray: #A3A3A3;
+  --accent-peach: #F4D4B3;
+  --accent-dark: #2A1F1A;
+  --icon-muted: #6B6B6B;
+  --star-gold: #FFB800;
+}
+
+
 /* ==========================================================
    HOTEL RATING & REVIEWS COMPONENT STYLE PACK
    ========================================================== */
@@ -25,6 +46,18 @@
   gap: 48px;
   background-color: var(--card-background, #ffffff);
   border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--border-radius-lg, 16px);
+  padding: 32px;
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.05));
+  margin-bottom: 40px;
+}
+
+ .rating-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Score is compact, bars stretch wider */
+  gap: 48px;
+  background-color: var(--card-background, #ffffff);
+  border:none;
   border-radius: var(--border-radius-lg, 16px);
   padding: 32px;
   box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.05));
@@ -113,6 +146,13 @@
 .review-card {
   background-color: var(--card-background, #ffffff);
   border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--border-radius-md, 12px);
+  padding: 24px;
+}
+
+.dark .review-card {
+  background-color: var(--card-background, #ffffff);
+  border:none;
   border-radius: var(--border-radius-md, 12px);
   padding: 24px;
 }
