@@ -14,6 +14,7 @@ import Settings from "./components/Settings";
 import Websites from "./components/Websites";
 import Industry from "./components/Industry";
 import Rating from "./components/Rating";
+import BookingSummery from "./components/BookingSummery";
 import Inspiration from "./components/Inspiration";
 import BookNow from "./components/BookNow";
 import Login from "./components/Login";
@@ -211,12 +212,13 @@ useEffect(() => {
   const isSettingsPage = location.pathname === "/settings";
   const isHotelDetailPage = location.pathname.startsWith("/hotel") || location.pathname.startsWith("/allhotel") || PROJECT_DATA.some(h => location.pathname === `/${h.slug}`) || HOTEL_ROOMS_DATA.some(h => location.pathname === `/${h.slug}`);
   const isBookNowPage = location.pathname === "/book-now";
+  const isBookingSummeryPage = location.pathname === "/booking-summery";
 
   // Auth checks
   const isAuthPage = location.pathname === "/login" || location.pathname === "/signup";
 
-  const shouldHideNavbar = isHotelDetailPage || isAuthPage || isBookNowPage || (isExplorePage && isDesktop);
-  const shouldHideFooter = isHotelDetailPage || isExplorePage || isSavedPage || isSettingsPage || isAuthPage || isBookNowPage;
+  const shouldHideNavbar = isHotelDetailPage || isAuthPage || isBookNowPage || (isExplorePage && isDesktop) || isBookingSummeryPage;
+  const shouldHideFooter = isHotelDetailPage || isExplorePage || isSavedPage || isSettingsPage || isAuthPage || isBookNowPage || isBookingSummeryPage;
 
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -327,6 +329,16 @@ useEffect(() => {
             </ProtectedRoute>
           } 
         />
+
+
+         <Route 
+  path="/booking-summery" 
+  element={
+    <ProtectedRoute>
+      <BookingSummery />
+    </ProtectedRoute>
+  } 
+/>
         <Route 
           path="/book-now" 
           element={
@@ -336,6 +348,10 @@ useEffect(() => {
           } 
         />
       </Routes>
+
+
+     
+
 
       {!shouldHideFooter && <Footer />}
     </div>

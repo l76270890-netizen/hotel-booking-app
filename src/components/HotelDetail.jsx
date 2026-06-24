@@ -98,6 +98,7 @@ export default function HotelDetail({ hotel: initialHotel, favorites, toggleFavo
   const { id } = useParams(); // Tracks URL /hotel/:id
   const navigate = useNavigate();
   const pageContainerRef = useRef(null); // Ref added to handle inner container scroll drops
+  const [isScrolled, setIsScrolled] = useState(false);
   
   // Manage internal active context states
   const [activeHotel, setActiveHotel] = useState(initialHotel || ALL_HOTELS_DATABASE[0]);
@@ -105,6 +106,24 @@ export default function HotelDetail({ hotel: initialHotel, favorites, toggleFavo
   const [dynamicRelatedList, setDynamicRelatedList] = useState([]);
 
   const isFavorite = favorites?.includes(activeHotel?.id);
+
+  // 📱 NEW EFFECT: Monitors the inner container scrollbar position for mobile layouts
+  useEffect(() => {
+    const container = pageContainerRef.current;
+    if (!container) return;
+
+    const handleInnerScroll = () => {
+      // If the scroll container moves past 260px down, set scrolled state to true
+      if (container.scrollTop > 260) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    container.addEventListener('scroll', handleInnerScroll);
+    return () => container.removeEventListener('scroll', handleInnerScroll);
+  }, [activeHotel]); // Re-binds cleanly when hotel data swaps
 
   // Automatically recalculate states when the browser URL changes or when the initial hotel changes
   useEffect(() => {
@@ -164,7 +183,8 @@ export default function HotelDetail({ hotel: initialHotel, favorites, toggleFavo
         <div className="main-image-wrapper">
           <img src={activeImage} className="main-image" alt={activeHotel.title} />
           
-          <div className="detail-header-overlay">
+          {/* 🌟 UPDATED LINE: Added dynamic class matching the isScrolled hook state */}
+          <div className={`detail-header-overlay ${isScrolled ? 'scrolled' : ''}`}>
             <button onClick={() => navigate(-1)} className="back-btn">‹</button>
             <div className="header-actions-right">
               <button

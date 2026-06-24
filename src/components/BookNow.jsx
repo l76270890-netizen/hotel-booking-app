@@ -30,7 +30,6 @@ export default function BookNow() {
     specialRequests: "",
   });
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
@@ -68,27 +67,25 @@ export default function BookNow() {
       return;
     }
 
-    setIsSubmitted(true);
+    // Navigates directly to your registered React Router summary page address path
+    navigate("/booking-summery", {
+      state: {
+        bookingData: {
+          hotelName: selectedHotel.title || selectedHotel.hotelName,
+          roomType: selectedHotel.title || "Deluxe Room",
+          checkIn: formData.checkIn,
+          checkOut: formData.checkOut,
+          guests: `${formData.guests} Guest${formData.guests > 1 ? "s" : ""}`,
+          pricePerNight: basePricePerNight,
+          nights: pricingSummary.nights,
+          taxesAndFees: pricingSummary.finalTotal * 0.1, // Mock 10% VAT calculation rate
+        },
+        formData: formData
+      }
+    });
   };
 
   const todayString = new Date().toISOString().split("T")[0];
-
-  if (isSubmitted) {
-    return (
-      <div className="success-container">
-        <div className="success-card">
-          <div className="success-icon">✓</div>
-          <h2>Booking Confirmed!</h2>
-          <p className="success-message">
-            Thank you, <strong>{formData.firstName}</strong>. Your stay at <strong>{selectedHotel.title || selectedHotel.hotelName}</strong> is secured.
-          </p>
-          <button onClick={() => navigate("/")} className="primary-btn">
-            Return to Dashboard
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="booking-page-container">
@@ -155,12 +152,24 @@ export default function BookNow() {
             </select>
           </div>
 
-          {/* Hidden/Desktop Identification Fields integrated smoothly */}
-          <div className="identification-fields-hidden">
-            <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleInputChange} required className="parameter-field" />
-            <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleInputChange} required className="parameter-field" />
-            <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleInputChange} required className="parameter-field" />
-            <input type="tel" name="phone" placeholder="Phone" value={formData.phone} onChange={handleInputChange} className="parameter-field" />
+          {/* Guest Personal Data Identification Section */}
+          <div className="identification-fields-visible" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', margin: '1rem 0' }}>
+            <div className="parameter-input-group">
+              <label>First Name</label>
+              <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleInputChange} required className="parameter-field" />
+            </div>
+            <div className="parameter-input-group">
+              <label>Last Name</label>
+              <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleInputChange} required className="parameter-field" />
+            </div>
+            <div className="parameter-input-group">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleInputChange} required className="parameter-field" />
+            </div>
+            <div className="parameter-input-group">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="Phone" value={formData.phone} onChange={handleInputChange} className="parameter-field" />
+            </div>
           </div>
 
           {/* Pricing Calculation Summary Layout Box */}
@@ -168,11 +177,11 @@ export default function BookNow() {
             <h4>Price Summary</h4>
             
             <div className="summary-data-inputs">
-              <input type="text" placeholder="Full Name" disabled className="summary-stub-input" />
+              <input type="text" placeholder={`${formData.firstName} ${formData.lastName}`.trim() || "Full Name"} disabled className="summary-stub-input" />
               <div className="calculation-row">
-                <input type="email" placeholder="Email Address" disabled className="summary-stub-input" />
+                <input type="email" placeholder={formData.email || "Email Address"} disabled className="summary-stub-input" />
                 <span className="multiplication-text">
-                  {pricingSummary.nights} Night, 1/ = ${pricingSummary.finalTotal}
+                  {pricingSummary.nights} Night{pricingSummary.nights !== 1 ? "s" : ""} = ${pricingSummary.finalTotal}
                 </span>
               </div>
             </div>
@@ -187,7 +196,7 @@ export default function BookNow() {
 
           {/* Primary Blueprint Call To Action Submit Button */}
           <button type="submit" className="confirm-booking-action-btn">
-            Confirm & Book
+            Confirm Booking
           </button>
         </form>
       </div>

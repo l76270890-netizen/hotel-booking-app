@@ -851,55 +851,46 @@ color: #fff;
   }
 
   /* ── 2. BACK LINK ACTION TARGET ── */
-  .view-all-btn-back-link {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-decoration: none !important;
-    background-color: transparent !important;
-    position: relative !important;
-    width: 35px !important;
-    height: 35px !important;
-    background-color: #fff !important;
-    top: unset !important;
-    left: unset !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
+.view-all-btn-back-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  position: relative !important;
+  width: 35px !important;
+  height: 35px !important;
+  background-color: #fff !important; /* White circle background in Light Mode */
+  border-radius: 50% !important;     /* Keeps the outer container round */
+  border: none !important;
+  box-shadow: none !important;
+  top: unset !important;
+  left: unset !important;
+}
 
+/* 🌙 DARK MODE OVERRIDES */
+.dark .view-all-btn-back-link {
+  background-color: rgba(255, 255, 255, 0.08) !important; /* Premium subtle dark translucent circle */
+}
 
-  .dark   .view-all-btn-back-link {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-decoration: none !important;
-    background-color: transparent !important;
-    position: relative !important;
-    width: 35px !important;
-    height: 35px !important;
-    background-color: transparent;
-    top: unset !important;
-    left: unset !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
+/* 🎯 THE ACTUAL BACK ICON TEXT/GLYPH */
+.back-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  width: 100% !important; 
+  height: 100% !important;
+  color: #000000 !important; /* Black arrow in Light Mode */
+  font-size: 1.75rem !important;
+  line-height: 1 !important;
+  top: -3.4px !important; /* Your specific vertical typography alignment fix */
+}
 
-  /* The actual styled circle button for Back */
-  .back-icon {
-    position: relative !important;
-    background-color: transparent !important;
-    color: #000000 !important;
-    border: 1px transparent solid !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 35px !important; 
-    height: 35px !important;
-    border-radius: 50% !important;
-    font-size: 1.75rem !important;
-    top: -3.4px !important;
-    left: unset !important;
-  }
+/* 🌙 DARK MODE ICON COLOR OVERRIDE */
+.dark .back-icon {
+  color: #ffffff !important; /* White arrow in Dark Mode */
+}
+
 
   .dark .back-icon {
     background-color: #121212 !important;

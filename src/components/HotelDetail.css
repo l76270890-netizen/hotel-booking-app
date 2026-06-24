@@ -285,6 +285,7 @@ body.dark{
 
 
 
+
 @media (max-width:769px) {
   /* Container & Theme Setup */
 .hotel-detail-container {
@@ -333,7 +334,7 @@ body.dark{
 }
 
 .detail-header-overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -633,4 +634,11 @@ body.dark{
   border: 2px solid #f7d0a3;
 }
 
+
+
 }
+
+
+
+
+
