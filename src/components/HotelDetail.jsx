@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom"; // Added useParams for direct tracking
-import { Link } from "react-router-dom";
+import { useEffect, useState, useRef } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import RelatedHotels from "./RelatedHotels"; 
 import "./HotelDetail.css";
 
@@ -8,14 +7,16 @@ const ALL_HOTELS_DATABASE = [
   {
     id: 1,
     slug: "hotel1",
-    title: "Radisson Blu Hotel",
-    description: "A warm, cozy aesthetic featuring online ordering real-time workout metrics, interactive progress charts.",
+     title: "Radisson Blu Anchorage Hotel",
+    description: "Modern Scandinavian-style hotel on the lagoon. Known for surface Bar & Grill and toptier suites.",
     image: "2.jpg",
     rating: 4.6,
-    price: 120,
-    location: "Lagos, Nigeria",
+    price: 263,
+    location: "Victoria Island, Lagos Nigeria",
     images: ["/2.jpg", "/3.jpg", "/card5.jpg"],
-    amenities: ["Free Wi-Fi", "Pool", "Breakfast", "Parking"]
+    amenities: ["Lagoon views", "Pool", "Breakfast", "Parking", "Meeting Room", "fine dining", "Free Wi-Fi"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Step into luxury at Coffee Shop Landing. Wake up to ocean waves and enjoy our rooftop infinity pool."
   },
   {
     id: 2,
@@ -35,7 +36,7 @@ const ALL_HOTELS_DATABASE = [
     title: "Golden Tulip Hotel",
     description: "A minimalist retail experience built with rapid filtering, high-resolution lookbooks, and a one-click checkout system.",
     image: "/6.jpg",
-    rating: 4.3,
+    rating: 4.3, 
     price: 250,
     location: "Port Harcourt, Nigeria",
     images: ["/6.jpg", "/5.jpg", "/11.jpg"],
@@ -48,7 +49,7 @@ const ALL_HOTELS_DATABASE = [
     description: "An immersive portal designed with dynamic destination maps, custom itinerary builders, and automated fare alerts.",
     image: "/9.jpg",
     rating: 4.9,
-    price: 310,
+    price: 250,
     location: "Port Harcourt, Nigeria",
     images: ["/9.jpg", "/7.jpg", "/5.jpg"],
     amenities: ["Beach Access", "Spa", "All-Inclusive", "Wi-Fi"]
@@ -79,21 +80,24 @@ const ALL_HOTELS_DATABASE = [
   },
   {
     id: 9,
-    slug: "hotel9",
-    title: "Grey Suite Cabins Hotel",
-    description: "A sophisticated wellness haven engineered with soundproof acoustic glass and minimalist monochrome designs. Perfectly curated to reduce stress, featuring state-of-the-art smart room tech and air purification.",
+     slug: "hotel9",
+    title: "Novotal Port Harcourt",
+    description: "French Accor brand. Modern business hotel popular with oil & gas executives",
     image: "/card2.jpg",
     rating: 4.7,
-    price: 420,
-    location: "Lagos Island",
+    price: 130,
+    location: "Port Harcort, Rivers State",
     images: ["/card2.jpg", "/12.jpg", "/download (1).jpg"],
-    amenities: ["Infrared Sauna", "Smart Room Automation", "Yoga Studio", "Acoustic Soundproofing"]
+    amenities: ["Bar", "Smart Room Automation", "24-hour room service", "Meeting rooms", "Airport shuttle"],
+    specs: { guests: 4, bedrooms: 3, beds: 3, bathrooms: 2 }
   }
 ];
+
 
 export default function HotelDetail({ hotel: initialHotel, favorites, toggleFavorite }) {
   const { id } = useParams(); // Tracks URL /hotel/:id
   const navigate = useNavigate();
+  const pageContainerRef = useRef(null); // Ref added to handle inner container scroll drops
   
   // Manage internal active context states
   const [activeHotel, setActiveHotel] = useState(initialHotel || ALL_HOTELS_DATABASE[0]);
@@ -128,6 +132,19 @@ export default function HotelDetail({ hotel: initialHotel, favorites, toggleFavo
 
       const sortedRecommendations = scoredHotels.sort((a, b) => b.matchScore - a.matchScore);
       setDynamicRelatedList(sortedRecommendations.slice(0, 4));
+
+      // 📱 INSTANT MOBILE TOP ALIGNMENT CORRECTIONS
+      // 1. Force the layout window back to zero coordinate position immediately
+      window.scrollTo(0, 0);
+
+      // 2. Safe-reset global HTML structures if layouts bypass standard window targets
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+
+      // 3. Reset wrapper container coordinate position directly if inner heights are fixed
+      if (pageContainerRef.current) {
+        pageContainerRef.current.scrollTop = 0;
+      }
     }
   }, [id, initialHotel]);
 
@@ -141,7 +158,8 @@ export default function HotelDetail({ hotel: initialHotel, favorites, toggleFavo
   ];
 
   return (
-    <div className="hotel-detail-container">
+    /* Attached pageContainerRef right here to catch inner scroll overflows on mobile screens */
+    <div ref={pageContainerRef} className="hotel-detail-container">
       <div className="gallery-section">
         <div className="main-image-wrapper">
           <img src={activeImage} className="main-image" alt={activeHotel.title} />
