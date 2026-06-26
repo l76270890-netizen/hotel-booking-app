@@ -1,64 +1,243 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import './Payment.css';
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import "./Payment.css";
 
 export default function Payment() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // 👉 Intercept the data sent from BookingSummery
   const bookingData = location.state?.bookingData;
   const formData = location.state?.formData;
 
-  // Handle missing data session
+  const [paymentMethod, setPaymentMethod] = useState("card");
+
   if (!bookingData || !formData) {
-    return <div style={{ padding: '3rem', textAlign: 'center' }}>No Active Booking Session Found</div>;
+    return (
+      <div className="payment-error">
+        <h2>No Active Booking Found</h2>
+
+        <button
+          onClick={() => navigate("/")}
+          className="back-btn"
+        >
+          Return Home
+        </button>
+      </div>
+    );
   }
 
-  const totalAmount = (bookingData.pricePerNight * bookingData.nights) + bookingData.taxesAndFees;
+  const totalRoomPrice =
+    bookingData.pricePerNight * bookingData.nights;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Navigate to your success route or handle submission logic here
-    navigate('/confirmation'); 
+  const totalAmount =
+    totalRoomPrice + bookingData.taxesAndFees;
+
+  const handlePayment = () => {
+    alert("Payment Successful!");
+
+    navigate("/", {
+      replace: true
+    });
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-md border border-gray-100 my-12">
-      <h1 className="text-2xl font-bold mb-2 text-gray-800">Secure Payment</h1>
-      <p className="text-sm text-gray-500 mb-6 font-medium">
-        Amount to charge: <span className="font-bold text-gray-800">${totalAmount.toFixed(2)}</span>
-      </p>
-      
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-600 mb-1">Cardholder Name</label>
-          <input type="text" className="w-full p-2.5 border rounded-lg outline-none" placeholder="John Doe" required />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-600 mb-1">Card Number</label>
-          <input type="text" className="w-full p-2.5 border rounded-lg outline-none" placeholder="1234 5678 1234 5678" required />
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">Expiry Date</label>
-            <input type="text" className="w-full p-2.5 border rounded-lg outline-none" placeholder="MM/YY" required />
+    <div className="payment-page">
+       <button
+    className="back-btn"
+    onClick={() => navigate(-1)}
+  >
+    ← Back
+  </button>
+
+      <div className="payment-container">
+
+        {/* LEFT SIDE */}
+
+        <div className="payment-form">
+
+          <h2>Payment Details</h2>
+
+          <p className="subtitle">
+            Complete your reservation securely.
+          </p>
+
+          {/* Guest Information */}
+
+          <div className="section">
+
+            <h3>Guest Information</h3>
+
+            <div className="info-box">
+              <p>
+                <strong>Name:</strong>{" "}
+                {formData.firstName} {formData.lastName}
+              </p>
+
+              <p>
+                <strong>Email:</strong>{" "}
+                {formData.email}
+              </p>
+            </div>
+
           </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">CVC</label>
-            <input type="text" className="w-full p-2.5 border rounded-lg outline-none" placeholder="123" required />
+
+          {/* Payment Method */}
+
+          <div className="section">
+
+            <h3>Select Payment Method</h3>
+
+            <div className="methods">
+
+              <button
+                className={
+                  paymentMethod === "card"
+                    ? "method active"
+                    : "method"
+                }
+                onClick={() =>
+                  setPaymentMethod("card")
+                }
+              >
+                💳 Card
+              </button>
+
+              <button
+                className={
+                  paymentMethod === "paystack"
+                    ? "method active"
+                    : "method"
+                }
+                onClick={() =>
+                  setPaymentMethod("paystack")
+                }
+              >
+                Paystack
+              </button>
+
+            </div>
+
           </div>
+
+          {/* Card Form */}
+
+          {paymentMethod === "card" && (
+
+            <div className="section">
+
+              <input
+                type="text"
+                placeholder="Card Number"
+              />
+
+              <div className="row">
+
+                <input
+                  type="text"
+                  placeholder="MM / YY"
+                />
+
+                <input
+                  type="password"
+                  placeholder="CVV"
+                />
+
+              </div>
+
+              <input
+                type="text"
+                placeholder="Card Holder Name"
+              />
+
+            </div>
+
+          )}
+
+          {paymentMethod === "paystack" && (
+
+            <div className="paystack-box">
+              You will be redirected to Paystack
+              after clicking Pay Now.
+            </div>
+
+          )}
+
+          <button
+            className="pay-btn"
+            onClick={handlePayment}
+          >
+            Pay ${totalAmount.toFixed(2)}
+          </button>
+
+          <p className="secure">
+            🔒 Secure SSL Protected Payment
+          </p>
+
         </div>
 
-        <div className="pt-4 flex gap-3">
-          <button type="button" onClick={() => navigate(-1)} className="w-1/3 border border-gray-300 hover:bg-gray-50 text-gray-700 py-3 rounded-lg font-medium transition">
-            Back
-          </button>
-          <button type="submit" className="w-2/3 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium transition">
-            Pay Now
-          </button>
+        {/* RIGHT SIDE */}
+
+        <div className="booking-summary">
+
+          <h2>Booking Summary</h2>
+
+          {bookingData.image && (
+            <img
+              src={bookingData.image}
+              alt={bookingData.hotelName}
+            />
+          )}
+
+          <h3>{bookingData.hotelName}</h3>
+
+          <div className="summary-item">
+            <span>Guest</span>
+            <span>
+              {formData.firstName}
+            </span>
+          </div>
+
+          <div className="summary-item">
+            <span>Room Price</span>
+            <span>
+              ${bookingData.pricePerNight}
+            </span>
+          </div>
+
+          <div className="summary-item">
+            <span>Nights</span>
+            <span>
+              {bookingData.nights}
+            </span>
+          </div>
+
+          <div className="summary-item">
+            <span>Room Total</span>
+            <span>
+              ${totalRoomPrice.toFixed(2)}
+            </span>
+          </div>
+
+          <div className="summary-item">
+            <span>Taxes & Fees</span>
+            <span>
+              ${bookingData.taxesAndFees.toFixed(2)}
+            </span>
+          </div>
+
+          <hr />
+
+          <div className="summary-item total">
+            <span>Total Amount</span>
+            <span>
+              ${totalAmount.toFixed(2)}
+            </span>
+          </div>
+
         </div>
-      </form>
+
+      </div>
+
     </div>
   );
 }
