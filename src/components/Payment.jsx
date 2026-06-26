@@ -1,11 +1,26 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import './Payment.css';
 
-export default function Payment({ bookingData, formData, onInputChange, onBack, onNext }) {
+export default function Payment() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // 👉 Intercept the data sent from BookingSummery
+  const bookingData = location.state?.bookingData;
+  const formData = location.state?.formData;
+
+  // Handle missing data session
+  if (!bookingData || !formData) {
+    return <div style={{ padding: '3rem', textAlign: 'center' }}>No Active Booking Session Found</div>;
+  }
+
   const totalAmount = (bookingData.pricePerNight * bookingData.nights) + bookingData.taxesAndFees;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onNext();
+    // Navigate to your success route or handle submission logic here
+    navigate('/confirmation'); 
   };
 
   return (
@@ -18,25 +33,25 @@ export default function Payment({ bookingData, formData, onInputChange, onBack, 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-600 mb-1">Cardholder Name</label>
-          <input type="text" name="cardName" value={formData.cardName} onChange={onInputChange} className="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="John Doe" required />
+          <input type="text" className="w-full p-2.5 border rounded-lg outline-none" placeholder="John Doe" required />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-600 mb-1">Card Number</label>
-          <input type="text" name="cardNumber" value={formData.cardNumber} onChange={onInputChange} className="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="1234 5678 1234 5678" required />
+          <input type="text" className="w-full p-2.5 border rounded-lg outline-none" placeholder="1234 5678 1234 5678" required />
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-600 mb-1">Expiry Date</label>
-            <input type="text" name="expiry" value={formData.expiry} onChange={onInputChange} className="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="MM/YY" required />
+            <input type="text" className="w-full p-2.5 border rounded-lg outline-none" placeholder="MM/YY" required />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-600 mb-1">CVC</label>
-            <input type="text" name="cvc" value={formData.cvc} onChange={onInputChange} className="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="123" required />
+            <input type="text" className="w-full p-2.5 border rounded-lg outline-none" placeholder="123" required />
           </div>
         </div>
 
         <div className="pt-4 flex gap-3">
-          <button type="button" onClick={onBack} className="w-1/3 border border-gray-300 hover:bg-gray-50 text-gray-700 py-3 rounded-lg font-medium transition">
+          <button type="button" onClick={() => navigate(-1)} className="w-1/3 border border-gray-300 hover:bg-gray-50 text-gray-700 py-3 rounded-lg font-medium transition">
             Back
           </button>
           <button type="submit" className="w-2/3 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium transition">

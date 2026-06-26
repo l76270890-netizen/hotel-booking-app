@@ -850,6 +850,7 @@ color: #fff;
     box-sizing: border-box !important;
   }
 
+  
   /* ── 2. BACK LINK ACTION TARGET ── */
 .view-all-btn-back-link {
   display: flex !important;
@@ -867,9 +868,12 @@ color: #fff;
   left: unset !important;
 }
 
+
 /* 🌙 DARK MODE OVERRIDES */
 .dark .view-all-btn-back-link {
-  background-color: rgba(255, 255, 255, 0.08) !important; /* Premium subtle dark translucent circle */
+  background-color: rgba(0, 0, 0, 0.08) !important; /* Premium subtle dark translucent circle */
+  border-radius: 50%;
+  border: 1px #ffffff solid !important;
 }
 
 /* 🎯 THE ACTUAL BACK ICON TEXT/GLYPH */
@@ -881,7 +885,7 @@ color: #fff;
   width: 100% !important; 
   height: 100% !important;
   color: #000000 !important; /* Black arrow in Light Mode */
-  font-size: 1.75rem !important;
+  font-size: 1.85rem !important;
   line-height: 1 !important;
   top: -3.4px !important; /* Your specific vertical typography alignment fix */
 }
@@ -893,9 +897,7 @@ color: #fff;
 
 
   .dark .back-icon {
-    background-color: #121212 !important;
-    color: #ffffff !important;
-    border: 1px #ffffff solid !important;
+    color: #ffffffa4 !important;
   }
 
   /* ── 3. LIKED FAVORITES LAYER WRAPPER ── */

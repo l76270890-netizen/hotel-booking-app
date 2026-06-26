@@ -1,0 +1,250 @@
+.select-location-page {
+  min-height: 100vh;
+  background-color: var(--bg);
+  padding: 0;
+}
+
+body.dark .select-location-page {
+  background-color: var(--bg-dark);
+}
+
+/* Header */
+.select-location-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background-color: var(--bg);
+  z-index: 10;
+}
+
+body.dark .select-location-header {
+  background-color: var(--bg-dark);
+  border-bottom-color: var(--accent-dark);
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  margin-left: -8px;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+}
+
+body.dark .back-btn {
+  color: var(--text-white);
+}
+
+.back-btn:active {
+  background-color: var(--border);
+}
+
+body.dark .back-btn:active {
+  background-color: var(--accent-dark);
+}
+
+.page-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+body.dark .page-title {
+  color: var(--text-white);
+}
+
+/* Search */
+.search-wrapper {
+  padding: 16px 20px 8px 20px;
+  background-color: var(--bg);
+  position: sticky;
+  top: 65px;
+  z-index: 9;
+}
+
+body.dark .search-wrapper {
+  background-color: var(--bg-dark);
+}
+
+.search-input-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+body.dark .search-input-box {
+  background-color: var(--accent-dark);
+}
+
+.search-input-box .search-icon {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+body.dark .search-input-box .search-icon {
+  color: var(--text-gray);
+}
+
+.search-input-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+body.dark .search-input-box input {
+  color: var(--text-white);
+}
+
+.search-input-box input::placeholder {
+  color: var(--muted);
+}
+
+body.dark .search-input-box input::placeholder {
+  color: var(--text-gray);
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+}
+
+body.dark .clear-btn {
+  color: var(--text-gray);
+}
+
+/* Location List */
+.location-options {
+  padding: 8px 0 40px 0;
+}
+
+.location-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.location-option:active {
+  background-color: var(--border);
+}
+
+body.dark .location-option:active {
+  background-color: var(--accent-dark);
+}
+
+.location-option.active {
+  background-color: rgba(13, 148, 136, 0.1);
+}
+
+body.dark .location-option.active {
+  background-color: rgba(13, 148, 136, 0.2);
+}
+
+.option-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+body.dark .option-icon {
+  background-color: var(--accent-dark);
+}
+
+.location-option.active .option-icon {
+  background-color: #0d9488;
+}
+
+.option-icon svg {
+  color: var(--muted);
+}
+
+body.dark .option-icon svg {
+  color: var(--text-gray);
+}
+
+.location-option.active .option-icon svg {
+  color: #ffffff;
+}
+
+.location-option.nearby .option-icon {
+  background-color: rgba(13, 148, 136, 0.15);
+}
+
+.location-option.nearby .option-icon svg {
+  color: #0d9488;
+}
+
+.option-content {
+  flex: 1;
+}
+
+.option-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 2px 0;
+}
+
+body.dark .option-title {
+  color: var(--text-white);
+}
+
+.option-subtitle {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+body.dark .option-subtitle {
+  color: var(--text-gray);
+}
+
+.location-divider {
+  height: 8px;
+  background-color: var(--border);
+  margin: 8px 0;
+}
+
+body.dark .location-divider {
+  background-color: var(--accent-dark);
+}
+
+.no-results {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+body.dark .no-results {
+  color: var(--text-gray);
+}

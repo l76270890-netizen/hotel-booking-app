@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
+// Line 2 stays the same - this is for routing
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
+// Line 5 - rename our hook to avoid the clash
+import { LocationProvider, useLocation as useUserLocation } from './context/LocationContext'
 import ProtectedRoute from "./routes/ProtectedRoute";
 import { AuthContext } from "./context/AuthContext"; 
 
@@ -12,6 +16,7 @@ import Settings from "./components/Settings";
 
 // Page Sections
 import Websites from "./components/Websites";
+import Payment from "./components/Payment"
 import Industry from "./components/Industry";
 import Rating from "./components/Rating";
 import BookingSummery from "./components/BookingSummery";
@@ -25,104 +30,306 @@ import All, { HOTEL_ROOMS_DATA } from "./components/All";
 import HotelDetail from "./components/HotelDetail";
 
 // Hotel data for homepage cards
-const PROJECT_DATA = [
+
+
+
+export const PROJECT_DATA = [
+  // LAGOS - 3 different hotels
   {
-    id: 1,
-    slug: "hotel1",
-    title: "Radisson Blu Anchorage Hotel",
-    description: "Modern Scandinavian-style hotel on the lagoon. Known for surface Bar & Grill and toptier suites.",
-    image: "2.jpg",
-    rating: 4.6,
-    price: 263,
-    location: "Victoria Island, Lagos Nigeria",
-    images: ["/2.jpg", "/3.jpg", "/card5.jpg"],
-    amenities: ["Lagoon views", "Pool", "Breakfast", "Parking", "Meeting Room", "fine dining", "Free Wi-Fi"],
-    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-    longDescription: "Step into luxury at Coffee Shop Landing. Wake up to ocean waves and enjoy our rooftop infinity pool."
-  },
-  {
-    id: 2,
-    slug: "hotel2",
-    title: "Tahir Guest Palace",
-    description: "Most lixuriouse hotel in Northern Nigeria. Palace-style architecture with islamic design.",
-    image: "/4.jpg",
-    rating: 4.8,
-    price: 140,
-    location: "Kano, Kano State",
-    images: ["/4.jpg", "/atomic 2.jpg", "/card4.jpg"],
-    amenities: ["Outdoor pool", "Spa", "Gym", "Conference center", "Multiple restaurants", "Extensive gardens"],
-    specs: { guests: 2, bedrooms: 1, beds: 2, bathrooms: 1 },
-    longDescription: "Nestled in Abuja hills with mountain views and fireplace nights."
-  },
-  {
-    id: 3,
-    slug: "hotel3",
-    title: "Eko Hotel Main Building",
-    description: "Iconic 5-star on VI. Kown for deep soaking bathtubs, premium bedding, and being Lagos' Comference hub.",
-    image: "/6.jpg",
-    rating: 4.3,
-    price: 234,
-    location: "Plot 1415 Adetokunbo Ademola Street,Victoria Island, Lagos",
-    images: ["/6.jpg", "/5.jpg", "/11.jpg"],
-    amenities: ["Pool", "7 Bar", "9 restaurants", "2 outdooor tennis court", "spa", "sauna", "gym", "airport shuttle","24-hour business center" ],
-    specs: { guests: 4, bedrooms: 2, beds: 2, bathrooms: 2 }
-  },
-  {
-    id: 4,
-    slug: "hotel4",
-    title: "Transcorp Hilton Abuja",
-    description: "Abuja's landmark 5-star. Where presidents and diplomats stay. Huge gardens, multiple wings",
-    image: "/9.jpg",
-    rating: 4.9,
-    price: 200,
-    location: "Abuja",
-    images: ["/9.jpg", "/7.jpg", "/5.jpg"],
-    amenities: ["Sophisticated design", "Spa", "Pool", "Elevated comfort", "Tennis courts", "7 restaurants"],
-    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 }
-  },
-  {
-    id: 5,
-    slug: "hotel5",
-    title: "Ibom Icon Hotel & Golf Resort",
-    description: "5-star resort set on 174 hectares with an 18-hole championship golf course. One of Nigerian's best resort experiences.",
-    image: "/card7.jpg",
+    id: 201,
+    slug: "crown-plaza-lagos-airport",
+    title: "Crowne Plaza Lagos Airport",
+    description: "4-star hotel connected to MMIA terminal with pool and gym.",
+    image: "/lagos-bonus1.jpg",
     rating: 4.5,
-    price: 180,
-    location: "Uyo, Akwa Ibom State",
-    images: ["/card7.jpg", "/12.jpg", "/13.jpg"],
-    amenities: ["Golf course", "Marina", "Spa", "3 restaurants", "outdoor pool", "Tennis courts", "Conference center", "Lagoon views"],
-    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 }
-  },
-  
-  {
-    id: 7,
-    slug: "hotel7",
-    title: "Hotel Presidential Port Harcourt",
-    description: "Historic 5-star hotel. Rebuild to international standards. Known as 'The pride of the Garden city'.",
-    image: "/card6.jpg",
-    rating: 4.7,
-    price: 120,
-    location: "Port Harcourt, Rivers State",
-    images: ["/card6.jpg", "/15.jpg", "/download (1).jpg"],
-    amenities: ["Outdoor Pool", "Spa", "Gym", "3 restaurants", "Casino", "Tennis court", "Conference halls"],
-    specs: { guests: 4, bedrooms: 3, beds: 3, bathrooms: 2 }
+    price: 58000,
+    location: "Lagos",
+    images: ["/lagos-bonus1.jpg", "/lagos-bonus1b.jpg", "/lagos-bonus1c.jpg"],
+    amenities: ["Airport Shuttle", "Pool", "Gym", "Restaurant", "Free WiFi"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Direct access to Murtala Muhammed Airport terminal. Perfect for transit. Book: booking.com/hotel/ng/crowne-plaza-airport-lagos"
   },
   {
-    id: 9, // Fixed duplicate ID
-    slug: "hotel9",
-    title: "Novotal Port Harcourt",
-    description: "French Accor brand. Modern business hotel popular with oil & gas executives",
-    image: "/card2.jpg",
+    id: 202,
+    slug: "wellington-babcock-hotel-lagos",
+    title: "Wellington Babcock Hotel",
+    description: "Boutique hotel in Ikoyi with rooftop bar and modern rooms.",
+    image: "/lagos-bonus2.jpg",
+    rating: 4.4,
+    price: 52000,
+    location: "Lagos",
+    images: ["/lagos-bonus2.jpg", "/lagos-bonus2b.jpg", "/lagos-bonus2c.jpg"],
+    amenities: ["Rooftop Bar", "Free WiFi", "Restaurant", "24hr Service"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Quiet Ikoyi location at Bourdillon Rd. Great for business trips. Book: booking.com/hotel/ng/wellington-babcock"
+  },
+  {
+    id: 203,
+    slug: "cape-mansion-hotel-lekki",
+    title: "Cape Mansion Hotel Lekki",
+    description: "Beachfront hotel with pool and restaurant in Lekki Phase 1.",
+    image: "/lagos-bonus3.jpg",
+    rating: 4.3,
+    price: 45000,
+    location: "Lagos",
+    images: ["/lagos-bonus3.jpg", "/lagos-bonus3b.jpg", "/lagos-bonus3c.jpg"],
+    amenities: ["Beach Access", "Pool", "Restaurant", "Free WiFi", "Parking"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Close to Landmark Beach at Admiralty Way, Lekki. Book: booking.com/hotel/ng/cape-mansion-lekki"
+  },
+
+  // ABUJA FCT - 3 different hotels
+  {
+    id: 204,
+    slug: "sheraton-abuja-hotel",
+    title: "Sheraton Abuja Hotel",
+    description: "5-star hotel with 2 pools and panoramic city views.",
+    image: "/abuja-bonus1.jpg",
     rating: 4.7,
-    price: 130,
-    location: "Port Harcort, Rivers State",
-    images: ["/card2.jpg", "/12.jpg", "/download (1).jpg"],
-    amenities: ["Bar", "Smart Room Automation", "24-hour room service", "Meeting rooms", "Airport shuttle"],
-    specs: { guests: 4, bedrooms: 3, beds: 3, bathrooms: 2 }
-  }
+    price: 82000,
+    location: "Abuja FCT",
+    images: ["/abuja-bonus1.jpg", "/abuja-bonus1b.jpg", "/abuja-bonus1c.jpg"],
+    amenities: ["2 Pools", "City View", "Spa", "Gym", "Free WiFi"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Iconic hotel at Ladi Kwali St, Wuse Zone 4. Close to CBD. Book: booking.com/hotel/ng/sheraton-abuja"
+  },
+  {
+    id: 205,
+    slug: "grand-i-hotel-abuja",
+    title: "Grand I Hotel Abuja",
+    description: "Modern hotel with rooftop restaurant and gym.",
+    image: "/abuja-bonus2.jpg",
+    rating: 4.4,
+    price: 48000,
+    location: "Abuja FCT",
+    images: ["/abuja-bonus2.jpg", "/abuja-bonus2b.jpg", "/abuja-bonus2c.jpg"],
+    amenities: ["Rooftop Restaurant", "Gym", "Free WiFi", "Parking"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Located at Aminu Kano Crescent, Wuse 2. Clean rooms, great service. Book: booking.com/hotel/ng/grand-i-abuja"
+  },
+  {
+    id: 206,
+    slug: "bolton-white-hotel-abuja",
+    title: "Bolton White Hotel Abuja",
+    description: "Budget hotel with conference hall near airport road.",
+    image: "/abuja-bonus3.jpg",
+    rating: 4.2,
+    price: 32000,
+    location: "Abuja FCT",
+    images: ["/abuja-bonus3.jpg", "/abuja-bonus3b.jpg", "/abuja-bonus3c.jpg"],
+    amenities: ["Conference Hall", "Restaurant", "Free WiFi", "24hr Service"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Affordable stay at Airport Rd, Gwarimpa. Book: booking.com/hotel/ng/bolton-white-abuja"
+  },
 
+  // RIVERS - 3 different hotels
+  {
+    id: 207,
+    slug: "golden-tulip-port-harcourt",
+    title: "Golden Tulip Port Harcourt",
+    description: "4-star hotel with spa and business center.",
+    image: "/rivers-bonus1.jpg",
+    rating: 4.5,
+    price: 42000,
+    location: "Rivers",
+    images: ["/rivers-bonus1.jpg", "/rivers-bonus1b.jpg", "/rivers-bonus1c.jpg"],
+    amenities: ["Spa", "Business Center", "Pool", "Restaurant", "Free WiFi"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Central PH at 34 Trans-Amadi Industrial Layout. Book: booking.com/hotel/ng/golden-tulip-ph"
+  },
+  {
+    id: 208,
+    slug: "obelisk-hotel-port-harcourt",
+    title: "Obelisk Hotel Port Harcourt",
+    description: "Luxury hotel with gym and rooftop bar.",
+    image: "/rivers-bonus2.jpg",
+    rating: 4.4,
+    price: 38000,
+    location: "Rivers",
+    images: ["/rivers-bonus2.jpg", "/rivers-bonus2b.jpg", "/rivers-bonus2c.jpg"],
+    amenities: ["Gym", "Rooftop Bar", "Pool", "Free WiFi"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Modern hotel at 11 Stadium Rd, Port Harcourt. Book: booking.com/hotel/ng/obelisk-ph"
+  },
+  {
+    id: 209,
+    slug: "grand-hotel-ebonyi-ph",
+    title: "Grand Hotel Ebonyi Port Harcourt",
+    description: "Budget hotel with clean rooms and restaurant.",
+    image: "/rivers-bonus3.jpg",
+    rating: 4.1,
+    price: 24000,
+    location: "Rivers",
+    images: ["/rivers-bonus3.jpg", "/rivers-bonus3b.jpg", "/rivers-bonus3c.jpg"],
+    amenities: ["Restaurant", "Free WiFi", "Parking", "24hr Service"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Affordable at Aba Rd, Port Harcourt city center. Book: booking.com/hotel/ng/grand-ebonyi-ph"
+  },
 
+  // KANO - 3 different hotels
+  {
+    id: 210,
+    slug: "grand-central-hotel-kano",
+    title: "Grand Central Hotel Kano",
+    description: "Premium hotel with pool and event hall.",
+    image: "/kano-bonus1.jpg",
+    rating: 4.5,
+    price: 30000,
+    location: "Kano",
+    images: ["/kano-bonus1.jpg", "/kano-bonus1b.jpg", "/kano-bonus1c.jpg"],
+    amenities: ["Pool", "Event Hall", "Restaurant", "Free WiFi"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Located at Zoo Rd, Kano city. Good for events. Book: booking.com/hotel/ng/grand-central-kano"
+  },
+  {
+    id: 211,
+    slug: "parkview-hotel-kano",
+    title: "Parkview Hotel Kano",
+    description: "Comfortable hotel with garden and restaurant.",
+    image: "/kano-bonus2.jpg",
+    rating: 4.2,
+    price: 25000,
+    location: "Kano",
+    images: ["/kano-bonus2.jpg", "/kano-bonus2b.jpg", "/kano-bonus2c.jpg"],
+    amenities: ["Garden", "Restaurant", "Free WiFi", "Parking"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Quiet location at Ibrahim Taiwo Rd, Kano. Book: booking.com/hotel/ng/parkview-kano"
+  },
+  {
+    id: 212,
+    slug: "meridian-hotel-kano",
+    title: "Meridian Hotel Kano",
+    description: "Budget hotel with 24hr power and clean rooms.",
+    image: "/kano-bonus3.jpg",
+    rating: 4.0,
+    price: 18000,
+    location: "Kano",
+    images: ["/kano-bonus3.jpg", "/kano-bonus3b.jpg", "/kano-bonus3c.jpg"],
+    amenities: ["24hr Power", "Free WiFi", "Restaurant"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Affordable at Murtala Mohammed Way, Kano. Book: booking.com/hotel/ng/meridian-kano"
+  },
+
+  // OYO - 3 different hotels
+  {
+    id: 213,
+    slug: "best-western-plus-ibadan",
+    title: "Best Western Plus Ibadan",
+    description: "4-star hotel with pool and conference facilities.",
+    image: "/oyo-bonus1.jpg",
+    rating: 4.6,
+    price: 34000,
+    location: "Oyo",
+    images: ["/oyo-bonus1.jpg", "/oyo-bonus1b.jpg", "/oyo-bonus1c.jpg"],
+    amenities: ["Pool", "Conference Hall", "Restaurant", "Free WiFi", "Gym"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Located at 2 Yemetu Rd, Ibadan. Great for business. Book: booking.com/hotel/ng/best-western-ibadan"
+  },
+  {
+    id: 214,
+    slug: "lavendra-hotel-ibadan",
+    title: "Lavendra Hotel Ibadan",
+    description: "Boutique hotel with modern rooms in Bodija.",
+    image: "/oyo-bonus2.jpg",
+    rating: 4.3,
+    price: 27000,
+    location: "Oyo",
+    images: ["/oyo-bonus2.jpg", "/oyo-bonus2b.jpg", "/oyo-bonus2c.jpg"],
+    amenities: ["Free WiFi", "Restaurant", "Parking", "24hr Service"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Stylish boutique at Bodija Rd, Ibadan. Book: booking.com/hotel/ng/lavendra-ibadan"
+  },
+  {
+    id: 215,
+    slug: "royal-crown-hotel-ibadan",
+    title: "Royal Crown Hotel Ibadan",
+    description: "Budget hotel with clean rooms and good service.",
+    image: "/oyo-bonus3.jpg",
+    rating: 4.1,
+    price: 20000,
+    location: "Oyo",
+    images: ["/oyo-bonus3.jpg", "/oyo-bonus3b.jpg", "/oyo-bonus3c.jpg"],
+    amenities: ["Free WiFi", "Restaurant", "Parking"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Affordable at Challenge Rd, Ibadan. Book: booking.com/hotel/ng/royal-crown-ibadan"
+  },
+
+  // ENUGU - 3 different hotels
+  {
+    id: 216,
+    slug: "golden-royale-hotel-enugu",
+    title: "Golden Royale Hotel Enugu",
+    description: "Premium hotel with pool and gym in GRA.",
+    image: "/enugu-bonus1.jpg",
+    rating: 4.5,
+    price: 32000,
+    location: "Enugu",
+    images: ["/enugu-bonus1.jpg", "/enugu-bonus1b.jpg", "/enugu-bonus1c.jpg"],
+    amenities: ["Pool", "Gym", "Restaurant", "Free WiFi"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Located at 5 Independence Ave, Enugu GRA. Book: booking.com/hotel/ng/golden-royale-enugu"
+  },
+  {
+    id: 217,
+    slug: "las-vegas-hotel-enugu",
+    title: "Las Vegas Hotel Enugu",
+    description: "Modern hotel with rooftop bar and event hall.",
+    image: "/enugu-bonus2.jpg",
+    rating: 4.3,
+    price: 28000,
+    location: "Enugu",
+    images: ["/enugu-bonus2.jpg", "/enugu-bonus2b.jpg", "/enugu-bonus2c.jpg"],
+    amenities: ["Rooftop Bar", "Event Hall", "Free WiFi", "Restaurant"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Contemporary hotel at Ogui Rd, Enugu city. Book: booking.com/hotel/ng/las-vegas-enugu"
+  },
+  {
+    id: 218,
+    slug: "de-enugu-hotel",
+    title: "De Enugu Hotel",
+    description: "Budget hotel with clean rooms and 24hr service.",
+    image: "/enugu-bonus3.jpg",
+    rating: 4.0,
+    price: 19000,
+    location: "Enugu",
+    images: ["/enugu-bonus3.jpg", "/enugu-bonus3b.jpg", "/enugu-bonus3c.jpg"],
+    amenities: ["24hr Service", "Free WiFi", "Restaurant"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Affordable at Old Park Rd, Enugu. Book: booking.com/hotel/ng/de-enugu-hotel"
+  },
+
+  // DELTA - 3 different hotels
+  {
+    id: 219,
+    slug: "dennis-hotel-warri",
+    title: "Dennis Hotel Warri",
+    description: "Premium hotel with pool and conference hall.",
+    image: "/delta-bonus1.jpg",
+    rating: 4.5,
+    price: 30000,
+    location: "Delta",
+    images: ["/delta-bonus1.jpg", "/delta-bonus1b.jpg", "/delta-bonus1c.jpg"],
+    amenities: ["Pool", "Conference Hall", "Restaurant", "Free WiFi"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Top hotel at Airport Rd, Warri. Good for oil & gas business. Book: booking.com/hotel/ng/dennis-warri"
+  },
+  {
+    id: 220,
+    slug: "royal-park-hotel-asaba",
+    title: "Royal Park Hotel Asaba",
+    description: "Comfortable hotel with garden and restaurant.",
+    image: "/delta-bonus2.jpg",
+    rating: 4.3,
+    price: 25000,
+    location: "Delta",
+    images: ["/delta-bonus2.jpg", "/delta-bonus2b.jpg", "/delta-bonus2c.jpg"],
+    amenities: ["Garden", "Restaurant", "Free WiFi", "Parking"],
+    specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
+    longDescription: "Peaceful stay at Okpanam Rd, Asaba. Book: booking.com/hotel/ng/royal-park-asaba"
+  },
+ 
 ];
+
 
 function AppContent() {
   // 👉 FIXED: Access the dynamic authentication context
@@ -213,12 +420,13 @@ useEffect(() => {
   const isHotelDetailPage = location.pathname.startsWith("/hotel") || location.pathname.startsWith("/allhotel") || PROJECT_DATA.some(h => location.pathname === `/${h.slug}`) || HOTEL_ROOMS_DATA.some(h => location.pathname === `/${h.slug}`);
   const isBookNowPage = location.pathname === "/book-now";
   const isBookingSummeryPage = location.pathname === "/booking-summery";
+   const isPaymeny = location.pathname === "/payment";
 
   // Auth checks
   const isAuthPage = location.pathname === "/login" || location.pathname === "/signup";
 
-  const shouldHideNavbar = isHotelDetailPage || isAuthPage || isBookNowPage || (isExplorePage && isDesktop) || isBookingSummeryPage;
-  const shouldHideFooter = isHotelDetailPage || isExplorePage || isSavedPage || isSettingsPage || isAuthPage || isBookNowPage || isBookingSummeryPage;
+  const shouldHideNavbar = isHotelDetailPage || isAuthPage || isBookNowPage || (isExplorePage && isDesktop) || isBookingSummeryPage || isPaymeny;
+  const shouldHideFooter = isHotelDetailPage || isExplorePage || isSavedPage || isSettingsPage || isAuthPage || isBookNowPage || isBookingSummeryPage || isPaymeny;
 
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -244,110 +452,121 @@ useEffect(() => {
     <div className={theme}>
       {!shouldHideNavbar && <Navbar favoritesCount={favorites.length} />}
        
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Hero profile={profile} />
-              <Websites favorites={favorites} toggleFavorite={toggleFavorite} PROJECT_DATA={PROJECT_DATA} />
-              <Industry />
-              <Inspiration />
-              <Rating/>
-            </ProtectedRoute>
-          }
-        />
+     <Routes>
+  <Route
+    path="/"
+    element={
+      <ProtectedRoute>
+        <Hero profile={profile} />
+        <Websites favorites={favorites} toggleFavorite={toggleFavorite} PROJECT_DATA={PROJECT_DATA} />
+        <Industry />
+        <Inspiration />
+        <Rating/>
+      </ProtectedRoute>
+    }
+  />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+  <Route path="/login" element={<Login />} />
+  <Route path="/signup" element={<Signup />} />
 
-        <Route
-          path="/view-all"
-          element={
-            <ProtectedRoute>
-              <All favorites={favorites} toggleFavorite={toggleFavorite} />
-            </ProtectedRoute>
-          }
-        />
+  <Route
+    path="/view-all"
+    element={
+      <ProtectedRoute>
+        <All favorites={favorites} toggleFavorite={toggleFavorite} />
+      </ProtectedRoute>
+    }
+  />
 
-        {PROJECT_DATA.map((hotel) => (
-          <Route
-            key={hotel.id}
-            path={`/${hotel.slug}`}
-            element={
-              <ProtectedRoute>
-                <HotelDetail hotel={hotel} favorites={favorites} toggleFavorite={toggleFavorite} />
-              </ProtectedRoute>
-            }
-          />
-        ))}
+  {PROJECT_DATA.map((hotel) => (
+    <Route
+      key={hotel.id}
+      path={`/${hotel.slug}`}
+      element={
+        <ProtectedRoute>
+          <HotelDetail hotel={hotel} favorites={favorites} toggleFavorite={toggleFavorite} />
+        </ProtectedRoute>
+      }
+    />
+  ))}
 
-        {HOTEL_ROOMS_DATA.map((hotel) => (
-          <Route
-            key={hotel.id}
-            path={`/${hotel.slug}`}
-            element={
-              <ProtectedRoute>
-                <HotelDetail hotel={hotel} favorites={favorites} toggleFavorite={toggleFavorite} />
-              </ProtectedRoute>
-            }
-          />
-        ))}
+  {HOTEL_ROOMS_DATA.map((hotel) => (
+    <Route
+      key={hotel.id}
+      path={`/${hotel.slug}`}
+      element={
+        <ProtectedRoute>
+          <HotelDetail hotel={hotel} favorites={favorites} toggleFavorite={toggleFavorite} />
+        </ProtectedRoute>
+      }
+    />
+  ))}
 
-        <Route
-          path="/allhotel/:id"
-          element={
-            <ProtectedRoute>
-              <HotelDetail hotel={null} allHotels={allHotelsCombined} favorites={favorites} toggleFavorite={toggleFavorite} />
-            </ProtectedRoute>
-          }
-        />
+  <Route
+    path="/allhotel/:id"
+    element={
+      <ProtectedRoute>
+        <HotelDetail hotel={null} allHotels={allHotelsCombined} favorites={favorites} toggleFavorite={toggleFavorite} />
+      </ProtectedRoute>
+    }
+  />
 
-        <Route
-          path="/hotel/:id"
-          element={
-            <ProtectedRoute>
-              <HotelDetail hotel={null} allHotels={PROJECT_DATA} favorites={favorites} toggleFavorite={toggleFavorite} />
-            </ProtectedRoute>
-          }
-        />
+  <Route
+    path="/hotel/:id"
+    element={
+      <ProtectedRoute>
+        <HotelDetail hotel={null} allHotels={PROJECT_DATA} favorites={favorites} toggleFavorite={toggleFavorite} />
+      </ProtectedRoute>
+    }
+  />
 
-        {/* 👉 FIXED: Secured feature routes below using ProtectedRoute wrappers */}
-        <Route 
-          path="/saved" 
-          element={
-            <ProtectedRoute>
-              <SavedHotels favorites={favorites} toggleFavorite={toggleFavorite} allHotels={allHotelsCombined} />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/settings" 
-          element={
-            <ProtectedRoute>
-              <Settings profile={profile} setProfile={setProfile} theme={theme} toggleTheme={toggleTheme} />
-            </ProtectedRoute>
-          } 
-        />
+  {/* 👉 FIXED: Secured feature routes below using ProtectedRoute wrappers */}
+  <Route 
+    path="/saved" 
+    element={
+      <ProtectedRoute>
+        <SavedHotels favorites={favorites} toggleFavorite={toggleFavorite} allHotels={allHotelsCombined} />
+      </ProtectedRoute>
+    } 
+  />
+  <Route 
+    path="/settings" 
+    element={
+      <ProtectedRoute>
+        <Settings profile={profile} setProfile={setProfile} theme={theme} toggleTheme={toggleTheme} />
+      </ProtectedRoute>
+    } 
+  />
 
+  <Route 
+    path="/booking-summery" 
+    element={
+      <ProtectedRoute>
+        <BookingSummery />
+      </ProtectedRoute>
+    } 
+  />
 
-         <Route 
-  path="/booking-summery" 
-  element={
-    <ProtectedRoute>
-      <BookingSummery />
-    </ProtectedRoute>
-  } 
-/>
-        <Route 
-          path="/book-now" 
-          element={
-            <ProtectedRoute>
-              <BookNow allHotels={allHotelsCombined} />
-            </ProtectedRoute>
-          } 
-        />
-      </Routes>
+  {/* Added Payment Route */}
+  <Route 
+    path="/payment" 
+    element={
+      <ProtectedRoute>
+        <Payment />
+      </ProtectedRoute>
+    } 
+  />
+
+  <Route 
+    path="/book-now" 
+    element={
+      <ProtectedRoute>
+        <BookNow allHotels={allHotelsCombined} />
+      </ProtectedRoute>
+    } 
+  />
+</Routes>
+
 
 
      
@@ -357,11 +576,27 @@ useEffect(() => {
     </div>
   );
 }
+function AppContentWithLocation() {
+  const { location } = useUserLocation(); // from our context
+  
+  // Sort: user state first, then others
+  const sortedHotels = [...PROJECT_DATA].sort((a, b) => {
+    if (!location) return 0; // no location set = no sorting
+    if (a.state === location.state && b.state !== location.state) return -1;
+    if (b.state === location.state && a.state !== location.state) return 1;
+    return 0;
+  });
 
+  return <AppContent sortedHotels={sortedHotels} />;
+}
+
+// Update your default export
 export default function App() {
   return (
     <BrowserRouter>
-      <AppContent />
+      <LocationProvider>
+        <AppContentWithLocation />
+      </LocationProvider>
     </BrowserRouter>
   );
 }
