@@ -1,0 +1,953 @@
+/* ==========================================================
+   DESIGN TOKENS & SYSTEM VARIABLES
+   ========================================================== */
+:root {
+  --primary-brand: #1a1a1a;
+  --secondary-text: #64748b;
+  --accent-gold: #dc850b;
+  --accent-gold-hover: #b56d09;
+  --bg-surface: #f3f0f0;
+  --card-background: #ffffff;
+  --border-light: #e2e8f0;
+  --border-radius-lg: 16px;
+  --border-radius-md: 12px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+:root {
+  --primary-brand: #1a1a1a;
+  --secondary-text: #64748b;
+  --accent-gold: #dc850b;
+  --accent-gold-hover: #b56d09;
+  --bg-surface: #f3f0f0;
+  --card-background: #ffffff;
+  --border-light: #e2e8f0;
+}
+
+
+.dark body {
+  background: #121212;
+  color: var(--primary-brand);
+}
+
+body.dark {
+  --primary-brand: #f8fafc;
+  --secondary-text: #94a3b8;
+  --bg-surface: #0f172a;
+  --card-background: #1e293b;
+  --border-light: #334155;
+}
+
+
+/* Base resets & layout container */
+.hotel-app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-surface);
+  color: var(--primary-brand);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+
+.dark .hotel-app-container {
+background: #121212;
+  color: white;
+  border: 1px solid #374151;
+}
+
+/* ==========================================================
+   REAL-SITE PREMIUM HEADER & HERO SEARCH SECTION
+   ========================================================== */
+.hotel-header-section {
+  margin-bottom: 40px;
+}
+
+.title-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header row layout with title and favorite count element */
+.header-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.header-main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 0;
+ margin-left: 470px;
+  color: var(--primary-brand);
+}
+
+
+
+.dark .header-main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 0;
+ margin-left: 470px;
+  color: #ffff;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--card-background);
+  border: 1px solid #1a1a1a;
+  color: var(--primary-brand);
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 300;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  animation: pulse 2s infinite;
+}
+
+
+
+/*Active heart*/
+.header-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header-heart {
+  position: relative;
+  font-size: 28px;
+  color: #FF4B4B;
+}
+
+.heart-count {
+  position: absolute;
+  top: -33px;
+  right: 2.2rem;
+  background: #FF4B4B;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.card-favorite-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+  z-index: 2;
+  transition: 0.2s;
+}
+
+.card-favorite-btn.active {
+  color: #FF4B4B;
+}
+
+
+
+
+
+.header-subtitle {
+  font-size: 1.05rem;
+  color: var(--secondary-text);
+  margin: 0 0 28px 0;
+  max-width: 600px;
+  line-height: 1.5;
+  margin-left: 320px;
+  margin-top: 20px;
+}
+
+
+.dark .header-subtitle {
+  font-size: 1.05rem;
+  color:#cccc;
+  margin: 0 0 28px 0;
+  max-width: 600px;
+  line-height: 1.5;
+  margin-left: 320px;
+  margin-top: 20px;
+}
+
+
+
+/*dark mode*/
+.dark .hero-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+
+
+/* Minimal Modern Back Navigation Button */
+.view-all-btn-back-link {
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color:#fff;
+  border: 1px solid #1a1a1a;
+  color: var(--primary-brand);
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 300;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  
+}
+
+
+.dark  
+/* Minimal Modern Back Navigation Button */
+.view-all-btn-back-link {
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color:transparent;
+  border: 1px solid #fff;
+  color: var(--primary-brand);
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 300;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  
+}
+
+
+.back-icon{
+  position: absolute;
+  top: -1px;
+  right: -2;
+  animation: pulse 2s infinite;
+
+}
+
+.dark 
+.back-icon{
+  position: absolute;
+  top: -1px;
+  right: -2;
+  animation: pulse 2s infinite;
+color: #fff;
+}
+
+
+
+
+  /* Fixes the double-stacked, warped heart button */
+  .heart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #1a1a1a;
+    color:  #000;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+    z-index: 99;
+    position: absolute;
+    left:-46px;
+    top:-29px;
+  }
+
+  .dark .heart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    background-color: #121212;
+    border: 1px solid #1a1a1a;
+    color:  #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+    z-index: 99;
+    position: absolute;
+    left:-46px;
+    top:-29px;
+    border: 1px #fff solid;
+  }
+
+
+
+/* Floating Clean Search Framework */
+.search-wrapper {
+  position: relative;
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+  border-radius: 50px;
+  overflow: hidden;
+  left: 30%;
+  position: relative;
+  
+}
+
+.dark .search-wrapper {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+   background-color: #1f2937;
+}
+
+.input-box {
+  width: 100%;
+  padding: 16px 50px 16px 52px;
+  font-size: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 30px;
+  outline: none;
+  background-color: var(--card-background);
+  transition: var(--transition-smooth);
+  color: var(--primary-brand);
+  
+}
+
+.input-box:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 4px rgba(220, 133, 11, 0.12);
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  font-size: 1.1rem;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 20px;
+  background:#131313;
+  border: none;
+  color: #94a3b8;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+}
+
+.dark .clear-search-btn{
+  background-color: #f8fafc;
+  color: #131313;
+}
+
+
+/* ==========================================================
+   DESKTOP GRID & CARD INTERFACE (3 Columns Standard)
+   ========================================================== */
+.web-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+.web-card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: var(--transition-smooth);
+}
+
+.web-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Premium Image Frame Ratio */
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 62%; /* Beautiful 1.618 golden aspect ratio */
+  background-color: #e2e8f0;
+}
+
+.card-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.web-card:hover .card-image-wrapper img {
+  transform: scale(1.04);
+}
+
+/* Heart Save Toggle Button Overlay */
+.card-favorite-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #64748b;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+  z-index: 3;
+}
+
+.card-favorite-btn:hover {
+  transform: scale(1.1);
+  background-color: #ffffff;
+  color: #ef4444;
+}
+
+.card-favorite-btn.active {
+  background-color: #ef4444;
+  color: #ffffff !important;
+}
+
+/* Unified Card Interior Layout System */
+.card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.card-content p {
+  color: var(--secondary-text);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Automatically cuts off huge descriptions at 3 clean lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Modernized Meta and Pricing row structure */
+.card-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Aligns this cleanly to the bottom of the card */
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #fdf8ee;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #f9ebd0;
+}
+
+.stars-gold {
+  color: #f59e0b;
+  font-size: 0.95rem;
+}
+
+.rating-text {
+  color: #b45309;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.card-pricing-block {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+
+
+.price-amount {
+  font-size:  1.05rem ;
+  font-weight: 700;
+  color:#ffff;
+  letter-spacing: -0.02em;
+}
+
+.card-price-label {
+  color:#ffff;
+  font-size: 0.85rem;
+}
+
+/* CTA Transaction Booking Button */
+.hotel-card-btn {
+  background-color: var(--primary-brand);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--border-radius-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.hotel-card-btn:hover {
+  background-color: var(--accent-gold);
+  box-shadow: 0 4px 12px rgba(220, 133, 11, 0.25);
+}
+
+/*dark theme styles*/
+.dark .portfolio-search-input,
+.dark .input-box {
+  background: #1e1e1e;
+  color: white;
+  border: 1px solid #374151;
+}
+
+.dark .portfolio-search-input::placeholder,
+.dark .input-box::placeholder {
+  color: #9ca3af;
+}
+
+
+
+
+/* Decorative Heart Pulse Effect */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+
+/* ==========================================================
+   MOBILE-ONLY RESPONSIVE SYSTEM (Strictly Screens Below 768px)
+   ========================================================== */
+@media (max-width: 768px) {
+  .hotel-app-container {
+    padding: 24px 16px;
+  }
+
+  .header-main-title {
+    display: none;
+  }
+
+  .header-subtitle {
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+
+  .heart-icon:active {
+    transform: scale(0.9);
+  }
+
+  /* Structural stacking grid container */
+  .web-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    position: relative;
+    left: 8px;
+  }
+
+  /* Fixed horizontal mobile row shape layout */
+  .web-card {
+    display: flex !important;
+    flex-direction: row !important;
+    height: 140px !important;
+    max-height: 140px !important;
+    border: 1px #1a1a1a solid;
+    border-radius: var(--border-radius-md) !important;
+    box-shadow: var(--shadow-sm) !important;
+    overflow: hidden !important;
+  }
+
+
+  .dark  /* Fixed horizontal mobile row shape layout */
+  .web-card {
+    display: flex !important;
+    flex-direction: row !important;
+    height: 140px !important;
+    max-height: 140px !important;
+    border: 1px #cccc solid;
+    border-radius: var(--border-radius-md) !important;
+    box-shadow: var(--shadow-sm) !important;
+    overflow: hidden !important;
+  }
+
+
+
+  .web-card:hover {
+    transform: none !important;
+  }
+
+  /* Overrides percentage top-padding expansion to close massive gaps */
+  .card-image-wrapper {
+    width: 40% !important;
+    min-width: 40% !important;
+    height: 100% !important;
+    padding-top: 0 !important;
+    position: relative !important;
+  }
+
+  /* Scaled heart favorite icon placement over images */
+  .card-favorite-btn {
+    top: 8px !important;
+    left: 8px !important;
+    right: auto !important;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 1rem !important;
+    z-index: 2 !important;
+  }
+
+  /* Tight right-side text details column framework */
+  .card-content {
+    padding: 12px 14px !important;
+    width: 64% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .card-content h3 {
+    font-size: 0.95rem !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Constrain short snippet description layouts safely */
+  .card-content p {
+    font-size: 0.78rem !important;
+    margin: 0 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Remove desktop decorative grid borders and structural row margins */
+  .card-meta-row {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .dark .booking-bar {
+    background-color: #1e1e1e;
+  }
+
+  .dark .mobile-search-pill input {
+    color: white;
+  }
+
+  /* Floating Clean Search Framework */
+  .search-wrapper {
+    position: relative;
+    max-width: 540px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 0 1px rgba(5, 4, 4, 0.5);
+    border-radius: 50px;
+    overflow: hidden;
+    left: 5%;
+    margin-top: 20px;
+  }
+
+  /* Floating search bar  */
+  .input-box {
+    width: 90%;
+    padding: 16px 50px 16px 52px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background-color: var(--card-background);
+    transition: var(--transition-smooth);
+    color: var(--primary-brand);
+  }
+
+  .input-box:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 4px rgba(203, 198, 192, 0.12);
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 20px;
+    font-size: 1.1rem;
+    color: #94a3b8;
+    pointer-events: none;
+  }
+
+  .clear-search-btn {
+    position: absolute;
+    right: 20px;
+    background: #131313;
+    border: none;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 40%;
+    transition: var(--transition-smooth);
+  }
+
+  .clear-search-btn:hover {
+    color: var(--primary-brand);
+  }
+
+.card-favorite-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(171, 18, 18, 0.95);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+  z-index: 2;
+  transition: 0.2s;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+.card-favorite-btn.active {
+  color: #FF4B4B;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .hotel-app-container {
+    padding: 24px 16px;
+  }
+
+  .header-main-title {
+    display: none !important; /* Hides text on mobile */
+  }
+
+  .header-subtitle {
+    display: none !important;
+  }
+
+  /* ── 1. HEADER ROW LAYOUT ── */
+  /* This container acts as the row, pushing back-link to left, heart-icon to right */
+  .header-title-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important; 
+    width: 100% !important;
+    position: relative !important;
+    padding: 10px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── 2. BACK LINK ACTION TARGET ── */
+  .view-all-btn-back-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+    position: relative !important;
+    width: 44px !important;
+    height: 44px !important;
+    top: unset !important;
+    left: unset !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* The actual styled circle button for Back */
+  .back-icon {
+    position: relative !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px #000000 solid !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important; 
+    height: 44px !important;
+    border-radius: 50% !important;
+    font-size: 1.75rem !important;
+    top: unset !important;
+    left: unset !important;
+  }
+
+  .dark .back-icon {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+    border: 1px #ffffff solid !important;
+  }
+
+  /* ── 3. LIKED FAVORITES LAYER WRAPPER ── */
+  .header-heart {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Link tag context inside heart */
+  .header-heart .link {
+    text-decoration: none !important;
+  }
+
+  /* The actual styled circle button for Heart */
+  .heart-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important; 
+    height: 44px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    border: 1px solid #1a1a1a !important;
+    color: #000000 !important;
+    font-size: 1.5rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transition: transform 0.2s ease !important;
+    position: relative !important;
+    left: unset !important;
+    top: unset !important;
+    z-index: 1 !important;
+  }
+
+  .dark .heart-icon {
+    background-color: #121212 !important;
+    border: 1px #ffffff solid !important;
+    color: #ffffff !important;
+  }
+
+  /* ── 4. NOTIFICATION BADGE PLACEMENT ── */
+  /* Keeps the badge cleanly overlayed on top right edge of the circle button */
+  .heart-count {
+    position: absolute !important;
+    top: -4px !important;
+    right: -4px !important;
+    background: #ff3b30 !important;
+    color: white !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    border: 2px solid white !important;
+    border-radius: 50% !important;
+    min-width: 20px !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+    left: unset !important;
+    transform: none !important;
+  }
+}

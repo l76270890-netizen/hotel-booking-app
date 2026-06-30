@@ -1,0 +1,501 @@
+:root {
+  --primary-dark: #b3966e;
+  --text-gray: #64748b;
+  --bg-white: #ffffff;
+  --radius-capsule: 30px;
+}
+
+.search-navbar {
+  display: none;
+}
+
+/* Base structural styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding-top: 0px; /* 👈 Prevents your main page content from sliding under the navbar */
+}
+
+/* ======================================================================
+   DESKTOP PREMIUM NAVBAR STYLING 
+   ====================================================================== */
+.desktop-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px; /* Tighter padding creates a cleaner profile line */
+  background-color: var(--bg-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px #121212 solid;  /* Sleeker look than a thick solid box border */
+  
+  /* Fixed position rules */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; 
+  z-index: 1000;          
+}
+
+.Logo {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0; /* 👈 Forces the logo to never shrink or break */
+}
+
+/* 🏢 NEW WRAPPER CONTEXT: Houses your nav items and your auth tokens cleanly */
+.navbar-right-side {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Separates links comfortably from the user container */
+}
+
+.desktop-links {
+  display: flex;
+  list-style: none;
+  gap: 32px; 
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.desktop-links a {
+  text-decoration: none;
+  color: var(--text-gray); /* 👈 Muted links look much more professional */
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Space between lucide icons and text label */
+}
+
+.desktop-links a:hover {
+  color: var(--primary-dark);
+}
+
+/* Active style for text links on desktop navbar */
+.desktop-links a.desktop-active {
+  color: #b3966e; 
+  font-weight: 700;
+  border-bottom: 2px solid #b3966e;
+  padding-bottom: 4px;
+}
+
+.nav-btn {
+  background-color: #b3966e;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  flex-shrink: 0; /* Keeps button text perfectly intact */
+}
+
+.nav-btn:hover {
+  background-color: #dca04e;
+}
+
+/* Hide the mobile bottom bar layout on desktop screens by default */
+.mobile-floating-bottom-bar {
+  display: none;
+}
+
+/* Mobile active layout updates */
+.bottom-tab-item.active {
+  color: #fff !important; 
+}
+
+.bottom-tab-item.active .tab-icon {
+  transform: scale(1.12); 
+  color: #ffff;
+  transition: transform 0.2s ease;
+}
+
+/* =========================
+   AUTHENTICATED USER (PRO MODE)
+========================= */
+.auth-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0; /* Stops the logout module from collapsing */
+}
+
+.auth-user span {
+  max-width: 140px; /* 👈 Locks down width context safely */
+  background: rgba(179, 150, 110, 0.1); /* Match tone to your light theme brand coloring */
+  color: #334155;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(179, 150, 110, 0.2);
+  font-size: 0.88rem;
+  font-weight: 500;
+  
+  /* 🚀 CLEAN TRUNCATION: Automatically cuts text with beautiful dots instead of ugly cutoffs */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: inline-block; 
+}
+
+.auth-user button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.auth-user button:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+.auth-user button:active {
+  transform: translateY(0);
+}
+
+/* ======================================================================
+   DARK MODE ADJUSTMENTS
+   ====================================================================== */
+.dark .desktop-navbar {
+  background: #121212;
+  border: 1px #9ca3af solid;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark .desktop-links a {
+  color: #9ca3af;
+}
+
+.dark .desktop-links a:hover,
+.dark .Logo,
+.dark .desktop-links a.desktop-active {
+  color: white;
+}
+
+.dark .desktop-links a.desktop-active {
+  border-bottom-color: white;
+}
+
+.dark .nav-btn {
+  background: #ffffff;
+  color: #121212;
+  font-weight: 600;
+}
+
+.dark .auth-user span {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+
+
+
+/* ======================================================================
+   DESKTOP DEFAULT NAVBAR STYLING 
+   ====================================================================== */
+/* Keeps desktop navbar visible on large screens */
+@media (min-width: 769px) {
+  .desktop-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* ======================================================================
+   MOBILE FLOATING BOTTOM WORKSPACE (GLASS CAPSULE) 
+   ====================================================================== */
+@media (max-width: 768px) {
+  
+  /* CRITICAL: This completely hides your desktop navigation menu on mobile screens */
+  .desktop-navbar {
+    display: none !important;
+  }
+
+  /* Construct the floating pill dock layer */
+  .mobile-floating-bottom-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    position: fixed;
+    bottom: 24px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    width: 90%;
+    max-width: 420px;
+    height: 66px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    z-index: 9999;
+    
+    background-color:white;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); 
+    
+    border-radius: var(--radius-capsule, 30px);
+    border: 1.3px solid #121212;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  }
+
+
+  .dark .mobile-floating-bottom-bar{
+        background-color: #121212;
+        border: 1px #fff solid;
+  }
+
+  /* Flex items inside the capsule dock */
+  .bottom-tab-item {
+    display: flex;
+    font-size: 13px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex: 1;
+    height: 100%;
+    border-radius: 34px;
+    color:  #131313;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent; 
+  }
+/* Container Dock Style */
+  .bottom-navbar-container {
+  display: flex;
+  align-items: stretch; /* Forces children to match the full height of the bar */
+  justify-content: space-between;
+  background-color: rgba(25, 25, 25, 0.75); /* Translucent base dock */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 6px; /* Uniform inner spacing around the items */
+  border-radius: 40px; /* Outer capsule look */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  height: 64px; /* Explicit height ensures the inner pill blends perfectly */
+  box-sizing: border-box;
+  
+}
+
+/* Individual Tab Item Layout */
+.dark  .bottom-tab-item {
+  display: flex;
+  font-size: 13px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Distributes items evenly inside the dock */
+  border-radius: 34px; /* Matches the curve of the container minus padding */
+  color: #a0a0a0; /* Muted text for inactive states */
+  text-decoration: none;
+  background-color: transparent;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  padding: 0 16px;
+}
+
+
+/* Base Icon Style */
+.tab-icon {
+  font-size: 1.35rem;
+  margin-bottom: 2px;
+  color: #121212; /* Crisp white icons */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+
+.dark .tab-icon {
+  font-size: 1.35rem;
+  margin-bottom: 2px;
+  color: #ffffff; /* Crisp white icons */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Base Label Style */
+.tab-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  color: #121212;
+  transition: color 0.2s ease;
+}
+
+
+
+.dark .tab-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  color: #a0a0a0;
+  transition: color 0.2s ease;
+}
+
+/* --- Hover Effect (Desktop Blend) --- */
+@media (hover: hover) {
+  .bottom-tab-item:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+}
+
+
+
+/* ==========================
+   ACTIVE TAB - LIGHT MODE
+   ========================== */
+
+.bottom-tab-item.active {
+  background-color: #f4d4b3;
+  color: black !important; /* Highlights text label */
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.bottom-tab-item.active .tab-icon {
+  color: #131313;
+  transform: translateY(-1px);
+}
+
+.bottom-tab-item.active .tab-label {
+  color: #131313;
+  font-weight: 700;
+}
+
+/* ==========================
+   ACTIVE TAB - DARK MODE
+   ========================== */
+
+.dark .bottom-tab-item.active {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #f4d4b3 !important; /* Highlights text label */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark .bottom-tab-item.active .tab-icon {
+  color: #f4d4b3;
+  transform: translateY(-1px);
+}
+
+.dark .bottom-tab-item.active .tab-label {
+  color: #f4d4b3;
+  font-weight: 700;
+}
+
+
+.mobile-favorites-badge{
+  position: absolute;
+  top: 1px;
+  left: 20px;
+
+  min-width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+
+}
+
+
+.dark 
+.mobile-favorites-badge{
+  position: absolute;
+  top: 1px;
+  left: 20px;
+
+  min-width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+
+}
+
+.bottom-tab-item.active .mobile-nav-badge{
+  color: #000;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark 
+.bottom-tab-item.active .mobile-nav-badge{
+  color: #f4d4b3;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Hide mobile styles from showing on desktop screen widths */
+@media (min-width: 769px) {
+  .mobile-floating-bottom-bar {
+    display: none !important;
+
+  }
+
+  
+}
+
+
+
+}
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .auth-user {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+.auth-user span {
+  background: rgba(255,255,255,0.08);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+  .auth-user button {
+    width: 100%;
+    padding: 10px;
+  }
+}

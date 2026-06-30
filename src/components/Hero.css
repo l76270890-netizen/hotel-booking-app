@@ -1,0 +1,340 @@
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+  --muted: #6b7280;
+  --btn-bg: #111827;
+  --btn-text: #ffffff;
+}
+
+
+
+body.dark{
+  --bg-dark: #121212;
+  --card-dark: #1E1E1E;
+  --text-white: #FFFFFF;
+  --text-gray: #A3A3A3;
+  --accent-peach: #F4D4B3;
+  --accent-dark: #2A1F1A;
+  --icon-muted: #6B6B6B;
+  --star-gold: #FFB800;
+}
+
+
+
+/* ==========================================================================
+   1. DESKTOP VIEW (Your Original Styles Restored 100%)
+   ========================================================================== */
+
+.hero { 
+  position: relative; 
+  height: 100vh; 
+  min-height: 600px; 
+  background-image: url('/4.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: #ffffff; 
+} 
+
+.dark .hero{
+  background-color: #121212;
+}
+
+.hero-overlay { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.45); 
+  z-index: 1; 
+} 
+
+.hero-content { 
+  position: relative; 
+  z-index: 2; 
+  text-align: center; 
+  max-width: 1000px; 
+  width: 90%; 
+  padding: 20px; 
+  margin-top: 60px; 
+} 
+
+/* Desktop Titles */
+.hero-title { 
+  font-size: clamp(2.5rem, 5vw, 4rem); 
+  font-weight: 700; 
+  margin-bottom: 20px; 
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+} 
+
+.hero-desc { 
+  font-size: clamp(1rem, 2vw, 1.25rem); 
+  margin-bottom: 40px; 
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); 
+  max-width: 600px; 
+  margin-left: auto; 
+  margin-right: auto; 
+} 
+
+/* Horizontal Booking Search Widget */ 
+.booking-bar { 
+  display: flex; 
+  flex-wrap: wrap; 
+  background: #ffffff; 
+  padding: 15px 25px; 
+  border-radius: 12px; 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); 
+  gap: 20px; 
+  align-items: center; 
+  justify-content: space-between; 
+} 
+
+.input-group { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  flex: 1; 
+  min-width: 150px; 
+} 
+
+.input-group label { 
+  color: #666666; 
+  font-size: 0.85rem; 
+  font-weight: 600; 
+  margin-bottom: 6px; 
+  text-transform: uppercase; 
+} 
+
+.input-group input, .input-group select { 
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid #dddddd; 
+  border-radius: 6px; 
+  color: #333333; 
+  font-size: 0.95rem; 
+  outline: none; 
+} 
+
+.input-group input:focus, .input-group select:focus { 
+  border-color: #c5a880; 
+} 
+
+.btn-search { 
+  background-color: #c5a880; 
+  color: #ffffff; 
+  border: none; 
+  padding: 15px 30px; 
+  font-size: 1rem; 
+  font-weight: 600; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  transition: background 0.3s ease; 
+  align-self: flex-end; 
+  height: 44px; 
+  display: flex; 
+  align-items: center; 
+} 
+
+.btn-search:hover { 
+  background-color: #b3966e; 
+} 
+
+
+
+.dark 
+.btn-search { 
+  background-color: #121212; 
+  color: #ffffff; 
+  border: 1px #fff solid; 
+  padding: 15px 30px; 
+  font-size: 1rem; 
+  font-weight: 600; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  transition: background 0.3s ease; 
+  align-self: flex-end; 
+  height: 44px; 
+  display: flex; 
+  align-items: center; 
+} 
+
+/* Hide Mobile Elements on Desktop */
+.user-greeting-row, 
+.mobile-search-pill, 
+.btn-explore-mobile,
+.hero-card-overlay {
+  display: none;
+}
+
+
+/* ==========================================================================
+   2. MOBILE ONLY BREAKPOINT (Changes only under 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  
+  /* Strip the screen-wide background image and make it mint green background */
+  .hero {
+    height: auto;
+    min-height: auto;
+    background-image: none !important; 
+    background-color: #eae6e0; 
+    padding: 50px 20px 30px 20px;
+    display: block;
+  }
+
+  /* Clear the screen-wide dark filter overlay */
+  .hero-overlay {
+    display: none;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Display Mobile App Header Row */
+  .user-greeting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .user-greeting {
+    font-size: 1.45rem;
+    color: #1a1a1a;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .dark .user-greeting {
+    font-size: 1.45rem;
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .notification-bell {
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-decoration: none;
+  }
+
+  /* Rearrange: Move Booking Bar container to the top slot */
+  .booking-bar {
+    order: 1; 
+    background: #ffffff;
+    padding: 10px 18px;
+    border: 1px #1E1E1E solid;
+    border-radius: 50px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Display mobile interactive search layout */
+  .mobile-search-pill {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .mobile-search-pill input {
+    flex: 1;
+    border: none;
+    padding: 9px;
+    outline: none;
+    font-size: 1rem;
+    color: #333333;
+    background: transparent;
+  }
+
+  .btn-filter-icon {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  /* Hide raw bulky desk components */
+  .input-group, .btn-search {
+    display: none !important;
+  }
+
+  /* Transform the Title/Description area into the isolated small image banner card */
+  .hero-card-banner {
+    order: 2; 
+    position: relative;
+    background-image: url(/4.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 40px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Apply local card overlay to image text only */
+  .hero-card-overlay {
+    display: block;
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .hero-title, .hero-desc {
+    position: relative;
+    z-index: 2;
+    margin-left: 0;
+    margin-right: 0;
+    color: #ffffff;
+    text-shadow: none;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .hero-desc {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  /* Soft pill glassmorphism explore button inside card banner */
+  .btn-explore-mobile {
+    display: block;
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

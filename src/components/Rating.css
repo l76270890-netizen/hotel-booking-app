@@ -1,0 +1,233 @@
+/* ==========================================================
+   HOTEL RATING & REVIEWS COMPONENT STYLE PACK
+   ========================================================== */
+.rating-section-wrapper {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--primary-brand, #1a1a1a);
+}
+
+.section-title {
+  font-size:2.4rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  color: #000;
+  text-align: center;
+}
+
+/* ── 1. DASHBOARD OVERVIEW GRID CONFIGURATION ── */
+.rating-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Score is compact, bars stretch wider */
+  gap: 48px;
+  background-color: var(--card-background, #ffffff);
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--border-radius-lg, 16px);
+  padding: 32px;
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.05));
+  margin-bottom: 40px;
+}
+
+/* Score Card Column Block */
+.score-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.big-score-badge {
+  background-color: var(--accent-gold, #dc850b);
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-text-block h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.score-text-block p {
+  font-size: 0.88rem;
+  color: var(--secondary-text, #64748b);
+  margin: 0;
+}
+
+/* Attribute Progress Bars Column Block */
+.attributes-breakdown-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.attribute-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.92rem;
+}
+
+.attr-name {
+  width: 130px;
+  font-weight: 500;
+}
+
+.progress-bar-track {
+  flex: 1;
+  height: 6px;
+  background-color: var(--border-light, #e2e8f0);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--primary-brand, #1a1a1a);
+  border-radius: 10px;
+}
+
+.attr-score {
+  width: 24px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ── 2. INDIVIDUAL USER FEEDBACK CARD LAYOUTS ── */
+.user-reviews-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-card {
+  background-color: var(--card-background, #ffffff);
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: var(--border-radius-md, 12px);
+  padding: 24px;
+}
+
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.user-profile-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--border-light, #e2e8f0);
+}
+
+.user-profile-meta h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: var(--secondary-text, #64748b);
+}
+
+.user-given-score {
+  font-size: 0.9rem;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.review-text-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0;
+}
+
+/* ── 3. DARK MODE EXTENSIONS OVERRIDES ── */
+.dark .rating-overview-grid,
+.dark .review-card {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.dark .progress-bar-track {
+  background-color: #334155;
+}
+
+.dark .progress-bar-fill {
+  background-color: var(--footer-accent, #F4D4B3);
+}
+
+.dark .user-given-score {
+  background-color: #334155;
+  color: #ffffff;
+}
+
+.dark .review-text-content {
+  color: #cbd5e1;
+}
+
+/* ==========================================================
+   MOBILE VIEW ADAPTIVE MEDIA QUERY BREAKDOWN
+   ========================================================== */
+@media (max-width: 768px) {
+  .rating-section-wrapper {
+    padding: 0 16px;
+    margin: 32px auto;
+  }
+
+
+  
+.section-title {
+  font-size:2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+  /* Converts horizontal split block to simple single-stacked column */
+  .rating-overview-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 24px;
+  }
+
+  .score-summary-card {
+    border-bottom: 1px solid var(--border-light, #e2e8f0);
+    padding-bottom: 24px;
+  }
+
+  .dark .score-summary-card {
+    border-color: #334155;
+  }
+
+  .attr-name {
+    width: 110px; /* Slims font container size footprint on screens under 768px */
+  }
+
+  .review-card {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,37 @@
+html,
+body,
+#root {
+  min-height: 100vh;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+
+.theme-toggle-btn {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 99999;
+
+  border: none;
+  background: red;
+  color: white;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+
+body.dark {
+  --bg: #0f172a;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --card: #1e293b;
+  --circle: #1e293b;
+}
