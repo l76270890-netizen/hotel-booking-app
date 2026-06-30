@@ -22,6 +22,48 @@ body.dark{
 
 
 
+/* Base styles for both arrows */
+.carousel-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333333;
+  font-size: 24px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+/* Hover effect for active buttons */
+.carousel-arrow:not(:disabled):hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(1.05); /* Keeps your inline top layout */
+}
+
+/* Click effect for active buttons */
+.carousel-arrow:not(:disabled):active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Styling for the disabled state */
+.carousel-arrow:disabled {
+  background-color: rgba(230, 230, 230, 0.5);
+  color: #aaaaaa;
+  border-color: #dddddd;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+
 /* Container & Theme Setup */
 .hotel-detail-container {
   background-color: #fff;
@@ -30,6 +72,15 @@ body.dark{
   box-sizing: border-box;
 }
 
+
+.hotel-main-header{
+  margin: 15px;
+}
+
+
+.header-right-price{
+  margin-top: 10px;
+}
 
 .dark .hotel-detail-container {
   background-color: #121212;
@@ -49,22 +100,103 @@ body.dark{
   margin-bottom: 32px;
 }
 
-.back-btn, .detail-heart-icon, .share-btn {
-  background: #1e1e1e;
-  border: 1px solid #333333;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 14px;
-  cursor: pointer;
-  display: block;
-  align-items: center;
-  gap: 8px;
+
+.main-image-wrapper {
+  position: relative; /* 1. This makes all absolute children stack on top */
+  overflow: hidden;
 }
 
-.back-btn:hover, .detail-heart-icon:hover, .share-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+/* 2. All overlay elements need absolute + z-index */
+.carousel-arrow,
+.carousel-dots,
+.detail-header-overlay {
+  position: absolute;
+  z-index: 10; /* Must be > image z-index */
 }
+
+/* 3. Arrows: center vertically */
+.carousel-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.carousel-arrow:hover { background: rgba(0, 0, 0, 0.6); }
+.carousel-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+.carousel-arrow.left { left: 12px; }
+.carousel-arrow.right { right: 12px; }
+
+/* 4. Dots: bottom center, hide on desktop */
+.carousel-dots {
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,.5);
+  padding: 0;
+  cursor: pointer;
+}
+.carousel-dots button:nth-child(n) { /* selected state handled inline still works */ }
+@media (min-width: 768px) {
+  .carousel-dots { display: none; }
+}
+
+/* 5. Header: top, full width */
+.detail-header-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  z-index: 11; /* Header above arrows */
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 100%);
+}
+.detail-header-overlay.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+/* 6. Icon buttons: circle bg so they’re visible on image */
+.back-btn, .detail-heart-icon, .share-btn {
+ background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.detail-header-overlay.scrolled .back-btn,
+.detail-header-overlay.scrolled .share-btn svg path,
+.detail-header-overlay.scrolled .detail-heart-icon {
+  background: rgba(255,255,255,0.8);
+  color: #000;
+  stroke: #000;
+}
+
 
 .header-actions-right {
   display: flex;
@@ -139,11 +271,30 @@ body.dark{
   color: #fff;
 }
 
+.review-preview-section{
+  margin: 10px;
+}
+
+
+.offers-section h3, .offers-section{
+  margin: 10px;
+}
+
+.description-section p {
+  color: #131313;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px;
+}
+
+
+
+.dark
 .description-section p {
   color: #cccccc;
   font-size: 16px;
   line-height: 1.6;
-  margin: 0;
+  margin: 10px;
 }
 
 /* Grid Layout for Amenities */
@@ -201,6 +352,14 @@ body.dark{
 
 .hotel-location {
   font-size: 14px;
+  color: #000;
+  margin: 0 0 16px 0;
+}
+
+
+.dark
+.hotel-location {
+  font-size: 14px;
   color: #aaaaaa;
   margin: 0 0 16px 0;
 }
@@ -252,6 +411,13 @@ body.dark{
 }
 
 .per-night {
+  font-size: 14px;
+  font-weight: 400;
+  color: #2e2e2e;
+}
+
+
+.dark  .per-night {
   font-size: 14px;
   font-weight: 400;
   color: #777777;
@@ -334,7 +500,7 @@ body.dark{
 }
 
 .detail-header-overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -508,7 +674,7 @@ body.dark{
 }
 
 /* Grid Custom Amenities Layout */
-.offers-section h3, .review-preview-section h3 {
+.offers-section h3{
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 16px 0;

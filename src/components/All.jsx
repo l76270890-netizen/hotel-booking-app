@@ -12,11 +12,11 @@ export const HOTEL_ROOMS_DATA = [
     slug: "transcorp-hilton-abuja",
     title: "Transcorp Hilton Abuja",
     description: "5-star luxury hotel with panoramic city views, 3 restaurants, spa, and outdoor pool.",
-    image: "/abuja1.jpg",
+    image: "/sk.jpg",
     rating: 4.8,
     price: 95000,
     location: "Abuja FCT",
-    images: ["/abuja1.jpg", "/abuja1b.jpg", "/abuja1c.jpg"],
+    images: [  "/sk.jpg","/tropic2.jpg", "/tropic3.jpg", "/tropic4.jpg"],
     amenities: ["Pool", "Spa", "Free WiFi", "Restaurant", "Gym"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Iconic 5-star hotel on Maitama Hill, 1 Aguiyi Ironsi St. Rooftop pool, world-class dining, close to Aso Rock Villa. Book: booking.com/hotel/ng/transcorp-hilton-abuja"
@@ -26,11 +26,11 @@ export const HOTEL_ROOMS_DATA = [
     slug: "ladi-kwali-conference-hotel",
     title: "Ladi Kwali Conference Hotel",
     description: "Modern hotel with conference facilities, rooftop bar, and premium suites in CBD.",
-    image: "/abuja2.jpg",
+    image: "/abuja2a.jpg",
     rating: 4.5,
     price: 65000,
     location: "Abuja FCT",
-    images: ["/abuja2.jpg", "/abuja2b.jpg", "/abuja2c.jpg"],
+    images: ["/abuja2a.jpg", "/abuja2b.jpg", "/abuja2.jpg", "/abuja2c.jpg"],
     amenities: ["Conference Hall", "Rooftop Bar", "Free WiFi", "Room Service"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Business and leisure in Central Business District, 21 Blantyre Crescent. Great for corporate stays. Book: booking.com/hotel/ng/ladi-kwali"
@@ -38,13 +38,13 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 3,
     slug: "naf-conference-centre-suites",
-    title: "NAF Conference Centre & Suites",
+    title: "Abuja Continental Hotel",
     description: "Affordable luxury with large conference halls and serene environment.",
     image: "/abuja3.jpg",
     rating: 4.3,
     price: 42000,
     location: "Abuja FCT",
-    images: ["/abuja3.jpg", "/abuja3b.jpg", "/abuja3c.jpg"],
+    images: ["/abuja3.jpg", "/17.jpg", "/3.jpg", "/abuja3b.jpg"],
     amenities: ["Conference Hall", "Parking", "Free WiFi", "Restaurant"],
     specs: { guests: 3, bedrooms: 1, beds: 2, bathrooms: 1 },
     longDescription: "Owned by Nigerian Air Force, 803 Air Force Base. Quiet location, good for meetings. Book: booking.com/hotel/ng/naf-conference-centre"
@@ -70,11 +70,11 @@ export const HOTEL_ROOMS_DATA = [
     slug: "golden-palace-hotel-umuahia",
     title: "Golden Palace Hotel Umuahia",
     description: "Comfortable stay with restaurant and event hall in Umuahia.",
-    image: "/abia2.jpg",
+    image: "/abia2a.jpg",
     rating: 4.2,
     price: 28000,
     location: "Abia",
-    images: ["/abia2.jpg", "/abia2b.jpg", "/abia2c.jpg"],
+    images: ["/abia2a.jpg", "/abia2b.jpg", "/abia2c.jpg", "/abia2d.jpg"],
     amenities: ["Restaurant", "Event Hall", "Free WiFi", "Parking"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Located at 30 Ikot Ekpene Rd, Umuahia. Clean rooms and friendly staff. Book: booking.com/hotel/ng/golden-palace-umuahia"
@@ -82,7 +82,7 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 6,
     slug: "ohams-abiagold-hotel",
-    title: "Ohams Abiagold Hotel",
+    title: "Oxvera Hotel Limited",
     description: "Boutique hotel with modern rooms and 24/7 service.",
     image: "/abia3.jpg",
     rating: 4.1,
@@ -112,7 +112,7 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 8,
     slug: "atlantic-hotel-yola",
-    title: "Atlantic Hotel Yola",
+    title: "Alheri Royal Hotel Yola",
     description: "Comfortable rooms with mountain views and 24hr power.",
     image: "/adamawa2.jpg",
     rating: 4.2,
@@ -132,7 +132,7 @@ export const HOTEL_ROOMS_DATA = [
     rating: 4.0,
     price: 18000,
     location: "Adamawa",
-    images: ["/adamawa3.jpg", "/adamawa3b.jpg", "/adamawa3c.jpg"],
+    images: ["/adamawa3.jpg", "/adamawa3b.jpg", "/adamawa3c.jpg", "/adamawa3d.jpg"],
     amenities: ["Garden", "Restaurant", "Free WiFi"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Affordable stay at 16 Factory Rd, Yola with peaceful garden setting. Book: booking.com/hotel/ng/parkview-yola"
@@ -148,7 +148,7 @@ export const HOTEL_ROOMS_DATA = [
     rating: 4.7,
     price: 55000,
     location: "Akwa Ibom",
-    images: ["/akwaibom1.jpg", "/akwaibom1b.jpg", "/akwaibom1c.jpg"],
+    images: ["/akwaibom1.jpg", "/akwaibom1b.jpg", "/akwaibom1c.jpg","/akwaibom1d.jpg"],
     amenities: ["Golf Course", "Spa", "Pool", "Restaurant", "Free WiFi"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Nwaniba Beach Rd, Uyo. 18-hole golf course and luxury spa. Book: booking.com/hotel/ng/ibom-hotel-golf-resort"
@@ -162,7 +162,7 @@ export const HOTEL_ROOMS_DATA = [
     rating: 4.8,
     price: 75000,
     location: "Akwa Ibom",
-    images: ["/akwaibom2.jpg", "/akwaibom2b.jpg", "/akwaibom2c.jpg"],
+    images: ["/akwaibom2.jpg", "/akwaibom2b.jpg", "/akwaibom2c.jpg",  "/akwaibom2d.jpg"],
     amenities: ["Convention Center", "Pool", "Spa", "Free WiFi", "Gym"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Marriott property at Nwaniba Rd, Uyo. Best for conferences and luxury stays. Book: booking.com/hotel/ng/le-meridien-ibom"
@@ -172,11 +172,11 @@ export const HOTEL_ROOMS_DATA = [
     slug: "desert-gold-hotel-uyo",
     title: "Desert Gold Hotel Uyo",
     description: "Modern hotel with rooftop bar and event halls.",
-    image: "/akwaibom3.jpg",
+    image: "/akwaibom3a.jpg",
     rating: 4.4,
     price: 38000,
     location: "Akwa Ibom",
-    images: ["/akwaibom3.jpg", "/akwaibom3b.jpg", "/akwaibom3c.jpg"],
+    images: ["/akwaibom3a.jpg", "/akwaibom3e.jpg", "/akwaibom3f.jpg"],
     amenities: ["Rooftop Bar", "Event Hall", "Free WiFi", "Restaurant"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Located at 42 Ikot Ekpene Rd, Uyo. Clean rooms, great service. Book: booking.com/hotel/ng/desert-gold-uyo"
@@ -192,7 +192,7 @@ export const HOTEL_ROOMS_DATA = [
     rating: 4.6,
     price: 38000,
     location: "Anambra",
-    images: ["/anambra1.jpg", "/anambra1b.jpg", "/anambra1c.jpg"],
+    images: ["/anambra1.jpg", "/anambra1b.jpg", "/anambra1c.jpg", "/anambra1d.jpg"],
     amenities: ["Pool", "Spa", "Conference Hall", "Free WiFi", "Restaurant"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Top hotel at 35 Old Owerri Rd, Onitsha. Great for business and shopping trips. Book: booking.com/hotel/ng/best-western-elomaz"
@@ -200,7 +200,7 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 14,
     slug: "de-gees-hotel-awka",
-    title: "De Gees Hotel & Suites",
+    title: "Meloch Hotel",
     description: "Modern hotel in Awka with rooftop bar and event halls.",
     image: "/anambra2.jpg",
     rating: 4.4,
@@ -230,13 +230,13 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 16,
     slug: "hazbal-hotel-bauchi",
-    title: "Hazbal Hotel Bauchi",
+    title: "Hazibal Hotel Bauchi",
     description: "Premium hotel with pool and conference facilities in Bauchi.",
     image: "/bauchi1.jpg",
     rating: 4.5,
     price: 28000,
     location: "Bauchi",
-    images: ["/bauchi1.jpg", "/bauchi1b.jpg", "/bauchi1c.jpg"],
+    images: ["/bauchi1.jpg", "/black 🖤.jpg", "/bauchi1c.jpg"],
     amenities: ["Pool", "Conference Hall", "Restaurant", "Free WiFi"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Best hotel in Bauchi city at Ahmadu Bello Way. Close to Yankari Game Reserve. Book: booking.com/hotel/ng/hazbal-bauchi"
@@ -250,7 +250,7 @@ export const HOTEL_ROOMS_DATA = [
     rating: 4.2,
     price: 22000,
     location: "Bauchi",
-    images: ["/bauchi2.jpg", "/bauchi2b.jpg", "/bauchi2c.jpg"],
+    images: ["/bauchi2.jpg", "/16.jpg", "/18.jpg"],
     amenities: ["Garden", "Restaurant", "Free WiFi", "Parking"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Quiet location at Nassarawa Rd, Bauchi. Good for families. Book: booking.com/hotel/ng/nassarawa-palace"
@@ -258,7 +258,7 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 18,
     slug: "metropolitan-hotel-bauchi",
-    title: "Metropolitan Hotel Bauchi",
+    title: "Yimir Hotel",
     description: "Budget hotel with 24hr power and clean rooms.",
     image: "/bauchi3.jpg",
     rating: 4.0,
@@ -280,7 +280,7 @@ export const HOTEL_ROOMS_DATA = [
     rating: 4.4,
     price: 32000,
     location: "Bayelsa",
-    images: ["/bayelsa1.jpg", "/bayelsa1b.jpg", "/bayelsa1c.jpg"],
+    images: ["/15.jpg", "/13.jpg", "/18.jpg"],
     amenities: ["River View", "Restaurant", "Free WiFi", "Parking"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Overlooks Nun River at Isaac Boro Expressway. Great for business trips. Book: booking.com/hotel/ng/ibis-yenagoa"
@@ -338,7 +338,7 @@ export const HOTEL_ROOMS_DATA = [
     rating: 4.3,
     price: 24000,
     location: "Benue",
-    images: ["/benue2.jpg", "/benue2b.jpg", "/benue2c.jpg"],
+    images: ["/benue2.jpg", "/benue1b.jpg", "/benue1c.jpg"],
     amenities: ["Garden", "Restaurant", "Free WiFi", "Parking"],
     specs: { guests: 3, bedrooms: 1, beds: 2, bathrooms: 1 },
     longDescription: "Spacious compound at Old GRA, Makurdi. Peaceful environment. Book: booking.com/hotel/ng/makurdi-international"
@@ -378,11 +378,11 @@ export const HOTEL_ROOMS_DATA = [
     slug: "el-kanemi-hotel-maiduguri",
     title: "El-Kanemi Hotel",
     description: "Government hotel with large compound and restaurant.",
-    image: "/borno2.jpg",
+    image: "/card3.jpg",
     rating: 4.2,
     price: 26000,
     location: "Borno",
-    images: ["/borno2.jpg", "/borno2b.jpg", "/borno2c.jpg"],
+    images: ["/card3.jpg", "/16.jpg", "/15.jpg"],
     amenities: ["Large Compound", "Restaurant", "Free WiFi", "Parking"],
     specs: { guests: 3, bedrooms: 1, beds: 2, bathrooms: 1 },
     longDescription: "Spacious rooms at Pompomari Rd, good for groups. Book: booking.com/hotel/ng/el-kanemi"
@@ -464,7 +464,7 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 32,
     slug: "potters-palace-hotel-warri",
-    title: "Potters Palace Hotel Warri",
+    title: "BridgeView Hotel Warri",
     description: "Premium hotel with gym and conference facilities.",
     image: "/delta2.jpg",
     rating: 4.5,
@@ -500,7 +500,7 @@ export const HOTEL_ROOMS_DATA = [
     rating: 4.7,
     price: 38000,
     location: "Edo",
-    images: ["/edo1.jpg", "/edo1b.jpg", "/edo1c.jpg"],
+    images: ["/edo1.jpg", "/edo1b.jpg", "/18.jpg"],
     amenities: ["Pool", "Spa", "Conference Hall", "Restaurant", "Free WiFi"],
     specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
     longDescription: "Top hotel at 25 Airport Rd, Benin City. Great for business and tourism. Book: booking.com/hotel/ng/best-western-benin"
@@ -538,7 +538,7 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 37,
     slug: "university-hotel-ado-ekiti",
-    title: "University Hotel Ado Ekiti",
+    title: "Randekhi Hotel Ado Ekiti",
     description: "Comfortable hotel near Ekiti State University with restaurant.",
     image: "/ekiti1.jpg",
     rating: 4.4,
@@ -582,7 +582,7 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 40,
     slug: "macdonald-hotel-enugu",
-    title: "MacDonald Hotel Enugu",
+    title: "Amor Hotel Enugu",
     description: "Historic 4-star hotel with pool and conference center.",
     image: "/enugu1.jpg",
     rating: 4.6,
@@ -596,7 +596,7 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 41,
     slug: "bonn-hotel-enugu",
-    title: "Bonn Hotel Enugu",
+    title: "Dream View Hotel Enugu",
     description: "Modern hotel with rooftop bar and gym.",
     image: "/enugu2.jpg",
     rating: 4.5,
@@ -610,7 +610,7 @@ export const HOTEL_ROOMS_DATA = [
   {
     id: 42,
     slug: "sports-club-hotel-enugu",
-    title: "Sports Club Hotel Enugu",
+    title: "Qincy Hotel Enugu",
     description: "Budget hotel with clean rooms and good location.",
     image: "/enugu3.jpg",
     rating: 4.2,
@@ -625,7 +625,7 @@ export const HOTEL_ROOMS_DATA = [
   // GOMBE - 3 real hotels
   {
     id: 43,
-    slug: "tudor-hotel-gombe",
+    slug: "travel View-hotel-gombe",
     title: "Tudor Hotel Gombe",
     description: "Premium hotel with pool and conference facilities.",
     image: "/gombe1.jpg",
@@ -656,7 +656,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 45,
   slug: "assumpta-ensuite-hotel",
-  title: "Assumpta Ensuite Hotel",
+  title: "Muna suite Hotel",
   description: "Modern hotel with conference hall in Owerri.",
   image: "/imo2.jpg",
   rating: 4.5,
@@ -714,7 +714,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 49,
   slug: "sarkin-kofa-hotel",
-  title: "Sarkin Kofa Hotel",
+  title: "Cacid Hotel",
   description: "Budget hotel with clean rooms and good service.",
   image: "/jigawa3.jpg",
   rating: 4.0,
@@ -744,7 +744,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 51,
   slug: "protea-hotel-kaduna",
-  title: "Protea Hotel Kaduna",
+  title: "Halal Fountain Hotel Kaduna",
   description: "Modern hotel with city views and rooftop restaurant.",
   image: "/kaduna2.jpg",
   rating: 4.5,
@@ -758,7 +758,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 52,
   slug: "al-nasr-hotel-kaduna",
-  title: "Al-Nasr Hotel Kaduna",
+  title: "Access Hotel Kaduna",
   description: "Budget hotel with clean rooms and 24hr power.",
   image: "/kaduna3.jpg",
   rating: 4.2,
@@ -774,7 +774,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 53,
   slug: "prince-palace-hotel-kano",
-  title: "Prince Palace Hotel Kano",
+  title: "Hilton Palace Hotel Kano",
   description: "5-star luxury hotel with pool, spa and mall.",
   image: "/kano1.jpg",
   rating: 4.8,
@@ -788,7 +788,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 54,
   slug: "daula-hotel-kano",
-  title: "Daula Hotel Kano",
+  title: "Amiingo Hotel Kano",
   description: "Premium hotel with conference facilities.",
   image: "/kano2.jpg",
   rating: 4.5,
@@ -802,13 +802,13 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 55,
   slug: "tipsy-hotel-kano",
-  title: "Tipsy Hotel Kano",
+  title: "Zaytun Hotel Kano",
   description: "Budget hotel with clean rooms and good service.",
   image: "/kano3.jpg",
   rating: 4.2,
   price: 22000,
   location: "Kano",
-  images: ["/kano3.jpg", "/kano3b.jpg", "/kano3c.jpg"],
+  images: ["/kano3.jpg", "/kano3b.jpg", "/18.jpg"],
   amenities: ["Free WiFi", "Restaurant", "Parking"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Affordable at Zaria Rd, Kano city center. Book: booking.com/hotel/ng/tipsy-kano"
@@ -838,7 +838,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.2,
   price: 22000,
   location: "Katsina",
-  images: ["/katsina2.jpg", "/katsina2b.jpg", "/katsina2c.jpg"],
+  images: ["/katsina2.jpg", "/5.jpg", "/3.jpg"],
   amenities: ["Garden", "Restaurant", "Free WiFi", "Parking"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Peaceful environment at Kofar Durbi Rd, Katsina. Book: booking.com/hotel/ng/royal-tropicana"
@@ -846,7 +846,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 58,
   slug: "karofi-hotel-katsina",
-  title: "Karofi Hotel Katsina",
+  title: "HillSide Hotel Katsina",
   description: "Budget hotel with 24hr power and service.",
   image: "/katsina3.jpg",
   rating: 4.0,
@@ -906,7 +906,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 62,
   slug: "federal-palace-hotel-lokoja",
-  title: "Federal Palace Hotel Lokoja",
+  title: "Idrinana Hotel Lokoja",
   description: "Government hotel at confluence of River Niger & Benue.",
   image: "/kogi1.jpg",
   rating: 4.3,
@@ -920,7 +920,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 63,
   slug: "royal-choice-inn-lokoja",
-  title: "Royal Choice Inn Lokoja",
+  title: "Suitoria Hotel Lokoja",
   description: "Premium hotel with pool and restaurant.",
   image: "/kogi2.jpg",
   rating: 4.5,
@@ -934,7 +934,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 64,
   slug: "crystal-hotel-okene",
-  title: "Crystal Hotel Okene",
+  title: "Reverton Hotel Lokoja",
   description: "Budget hotel with clean rooms and 24hr power.",
   image: "/kogi3.jpg",
   rating: 4.1,
@@ -950,7 +950,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 65,
   slug: "kwara-palace-hotel-ilorin",
-  title: "Kwara Palace Hotel Ilorin",
+  title: "Novotel Hotel",
   description: "Premium hotel with pool and conference facilities.",
   image: "/kwara1.jpg",
   rating: 4.6,
@@ -970,7 +970,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.4,
   price: 28000,
   location: "Kwara",
-  images: ["/kwara2.jpg", "/kwara2b.jpg", "/kwara2c.jpg"],
+  images: ["/kwara2.jpg", "/3.jpg", "/17.jpg"],
   amenities: ["Gym", "Rooftop Restaurant", "Pool", "Free WiFi"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Contemporary hotel at GRA Ilorin, Ibrahim Taiwo Rd. Book: booking.com/hotel/ng/de-nations-ilorin"
@@ -984,7 +984,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.1,
   price: 20000,
   location: "Kwara",
-  images: ["/kwara3.jpg", "/kwara3b.jpg", "/kwara3c.jpg"],
+  images: ["/kwara3.jpg", "/5.jpg", "/16.jpg"],
   amenities: ["Free WiFi", "Restaurant", "Parking"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Affordable stay at Taiwo Isale Rd, Ilorin city center. Book: booking.com/hotel/ng/royal-arbela"
@@ -1008,7 +1008,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 69,
   slug: "lagos-continental-hotel",
-  title: "Lagos Continental Hotel",
+  title: "Albergo Hotel and Suites",
   description: "Luxury hotel in Kofo Abayomi with marina views.",
   image: "/lagos2.jpg",
   rating: 4.7,
@@ -1022,13 +1022,13 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 70,
   slug: "four-points-sheraton-lagos",
-  title: "Four Points by Sheraton Lagos",
+  title: "Sheraton Lagos",
   description: "4-star hotel with pool and gym on Victoria Island.",
   image: "/lagos3.jpg",
   rating: 4.6,
   price: 65000,
   location: "Lagos",
-  images: ["/lagos3.jpg", "/lagos3b.jpg", "/lagos3c.jpg"],
+  images: ["/lagos3.jpg", "/lagos3b.jpg", "/3.jpg"],
   amenities: ["Pool", "Gym", "Restaurant", "Free WiFi", "Spa"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Marriott property at 9/13 Ozumba Mbadiwe Ave, Victoria Island. Book: booking.com/hotel/ng/four-points-lagos"
@@ -1038,7 +1038,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 71,
   slug: "taham-hotel-lafia",
-  title: "Taham Hotel Lafia",
+  title: "Taal Conference Hotel Ltd",
   description: "Premium hotel with pool and conference hall.",
   image: "/nasarawa1.jpg",
   rating: 4.5,
@@ -1058,7 +1058,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.3,
   price: 22000,
   location: "Nasarawa",
-  images: ["/nasarawa2.jpg", "/nasarawa2b.jpg", "/nasarawa2c.jpg"],
+  images: ["/nasarawa2.jpg.jpg", "/18.jpg", "/nasarawa1b.jpg"],
   amenities: ["Garden", "Restaurant", "Free WiFi", "Parking"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "45min to Abuja at Abuja-Keffi Rd, Keffi. Good for transit stays. Book: booking.com/hotel/ng/royal-breeze-keffi"
@@ -1088,7 +1088,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.6,
   price: 28000,
   location: "Niger",
-  images: ["/niger1.jpg", "/niger1b.jpg", "/niger1c.jpg"],
+  images: ["/niger1.jpg", "/3.jpg", "/5.jpg"],
   amenities: ["Pool", "Event Hall", "Restaurant", "Free WiFi"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Top hotel at Bosso Rd, Minna. Great for conferences. Book: booking.com/hotel/ng/tahrir-minna"
@@ -1096,7 +1096,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 75,
   slug: "chanchaga-hotel-minna",
-  title: "Chanchaga Hotel Minna",
+  title: "Bavia Hotel Minna",
   description: "Government hotel with large compound.",
   image: "/niger2.jpg",
   rating: 4.3,
@@ -1116,7 +1116,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.1,
   price: 18000,
   location: "Niger",
-  images: ["/niger3.jpg", "/niger3b.jpg", "/niger3c.jpg"],
+  images: ["/niger3.jpg", "/3.jpg", "/5.jpg"],
   amenities: ["Free WiFi", "Restaurant", "Parking"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Affordable stay at Abuja-Kaduna Rd, Suleja. Book: booking.com/hotel/ng/royal-harps-suleja"
@@ -1126,7 +1126,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 77,
   slug: "green-legacy-resort-abeokuta",
-  title: "Green Legacy Resort Abeokuta",
+  title: "Leksokky Hotel and Suites",
   description: "Luxury resort with pool, golf and conference center.",
   image: "/ogun1.jpg",
   rating: 4.7,
@@ -1154,7 +1154,7 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 79,
   slug: "valley-view-hotel-abeokuta",
-  title: "Valley View Hotel Abeokuta",
+  title: "Sandton Gold Hotels",
   description: "Budget hotel with rock views and restaurant.",
   image: "/ogun3.jpg",
   rating: 4.2,
@@ -1176,7 +1176,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.6,
   price: 32000,
   location: "Ondo",
-  images: ["/ondo1.jpg", "/ondo1b.jpg", "/ondo1c.jpg"],
+  images: ["/ondo1.jpg", "/ondo1b.jpg", "/3.jpg", "/ondo1c.jpg"],
   amenities: ["Pool", "Conference Hall", "Restaurant", "Free WiFi"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Top hotel at Oyemekun Rd, Akure. Great service and location. Book: booking.com/hotel/ng/royal-bird-akure"
@@ -1190,7 +1190,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.4,
   price: 28000,
   location: "Ondo",
-  images: ["/ondo2.jpg", "/ondo2b.jpg", "/ondo2c.jpg"],
+  images: ["/ondo2.jpg", "/ondo2b.jpg" , "/5.jpg", "/ondo2c.jpg"],
   amenities: ["Gym", "Rooftop Bar", "Restaurant", "Free WiFi"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Contemporary hotel at Arakale Rd, Akure state capital. Book: booking.com/hotel/ng/davic-akure"
@@ -1198,13 +1198,13 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 82,
   slug: "sunview-hotel-akure",
-  title: "Sunview Hotel Akure",
+  title: "Green Court Apartment and Suites",
   description: "Budget hotel with clean rooms and good service.",
   image: "/ondo3.jpg",
   rating: 4.1,
   price: 20000,
   location: "Ondo",
-  images: ["/ondo3.jpg", "/ondo3b.jpg", "/ondo3c.jpg"],
+  images: ["/ondo3.jpg", "/ondo3b.jpg", "/ondo3c.jpg", "/ondo3d.jpg", "/5.jpg"],
   amenities: ["Free WiFi", "Restaurant", "Parking", "24hr Service"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Affordable stay at Oba Adesida Rd, Akure city center. Book: booking.com/hotel/ng/sunview-akure"
@@ -1220,7 +1220,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.6,
   price: 30000,
   location: "Osun",
-  images: ["/osun1.jpg", "/osun1b.jpg", "/osun1c.jpg"],
+  images: ["/osun1.jpg", "/osun1b.jpg", "/5.jpg", "/osun1c.jpg"],
   amenities: ["Cultural Tours", "Pool", "Restaurant", "Free WiFi"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Near Oduduwa Shrine at Mayfair Rd, Ile-Ife. Great for cultural tourism. Book: booking.com/hotel/ng/heritage-ile-ife"
@@ -1234,7 +1234,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.5,
   price: 35000,
   location: "Osun",
-  images: ["/osun2.jpg", "/osun2b.jpg", "/osun2c.jpg"],
+  images: ["/osun2.jpg", "/osun2b.jpg", "/osun2c.jpg", "/18.jpg"],
   amenities: ["Pool", "Conference Center", "Spa", "Restaurant", "Free WiFi"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "International standard at Ondo Rd, Ile-Ife. Book: booking.com/hotel/ng/golden-tulip-ile-ife"
@@ -1248,54 +1248,10 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.2,
   price: 18000,
   location: "Osun",
-  images: ["/osun3.jpg", "/osun3b.jpg", "/osun3c.jpg"],
+  images: ["/osun3.jpg", "/osun3b.jpg", "/17.jpg", "/osun3c.jpg"],
   amenities: ["Garden", "Free WiFi", "Restaurant"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Affordable and peaceful at Lagere Rd, Ile-Ife. Book: booking.com/hotel/ng/bush-cottage"
-},
-
-// OYO - 3 real hotels
-{
-  id: 86,
-  slug: "ibis-ibadan-hotel",
-  title: "Ibis Hotel Ibadan",
-  description: "International budget hotel with modern rooms.",
-  image: "/oyo1.jpg",
-  rating: 4.6,
-  price: 32000,
-  location: "Oyo",
-  images: ["/oyo1.jpg", "/oyo1b.jpg", "/oyo1c.jpg"],
-  amenities: ["Free WiFi", "Restaurant", "24hr Service", "Parking"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Accor property at 24 Ring Rd, Ibadan. Reliable and affordable. Book: booking.com/hotel/ng/ibis-ibadan"
-},
-{
-  id: 87,
-  slug: "kakanfo-inn-ibadan",
-  title: "Kakanfo Inn Ibadan",
-  description: "Premium hotel with pool and conference hall.",
-  image: "/oyo2.jpg",
-  rating: 4.5,
-  price: 30000,
-  location: "Oyo",
-  images: ["/oyo2.jpg", "/oyo2b.jpg", "/oyo2c.jpg"],
-  amenities: ["Pool", "Conference Hall", "Restaurant", "Free WiFi"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Named after Bashorun Gaa at 3 Airport Rd, Ibadan. Historic and comfortable. Book: booking.com/hotel/ng/kakanfo-inn"
-},
-{
-  id: 88,
-  slug: "de-majesty-hotel-ibadan",
-  title: "De Majesty Hotel Ibadan",
-  description: "Modern hotel with rooftop restaurant and gym.",
-  image: "/oyo3.jpg",
-  rating: 4.3,
-  price: 26000,
-  location: "Oyo",
-  images: ["/oyo3.jpg", "/oyo3b.jpg", "/oyo3c.jpg"],
-  amenities: ["Rooftop Restaurant", "Gym", "Free WiFi", "Parking"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Contemporary hotel at Bodija Rd, Ibadan. Book: booking.com/hotel/ng/de-majesty-ibadan"
 },
 
 // PLATEAU - 3 real hotels
@@ -1308,7 +1264,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.6,
   price: 32000,
   location: "Plateau",
-  images: ["/plateau1.jpg", "/plateau1b.jpg", "/plateau1c.jpg"],
+  images: ["/plateau1.jpg", "/plateau1b.jpg", "/3.jpg", "/plateau1c.jpg", "/plateau1d.jpg"],
   amenities: ["Pool", "Cold Weather", "Restaurant", "Free WiFi"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Enjoy Jos cool climate at 1 Zaria Rd, Jos. Great views of the plateau. Book: booking.com/hotel/ng/crystal-palace-jos"
@@ -1322,7 +1278,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.4,
   price: 26000,
   location: "Plateau",
-  images: ["/plateau2.jpg", "/plateau2b.jpg", "/plateau2c.jpg"],
+  images: ["/plateau2.jpg", "/plateau2b.jpg", "/plateau2c.jpg", "/plateau2d.jpg"],
   amenities: ["Garden", "Restaurant", "Free WiFi", "Parking"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Historic property at Yakubu Gowon Way, Jos. Book: booking.com/hotel/ng/hill-station-jos"
@@ -1336,7 +1292,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.2,
   price: 18000,
   location: "Plateau",
-  images: ["/plateau3.jpg", "/plateau3b.jpg", "/plateau3c.jpg"],
+  images: ["/plateau3.jpg", "/plateau3b.jpg", "/3.jpg", "/plateau3d.jpg"],
   amenities: ["24hr Power", "Free WiFi", "Restaurant"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Affordable at Rayfield Rd, Jos for short stays. Book: booking.com/hotel/ng/la-crystal-gold"
@@ -1346,13 +1302,13 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 92,
   slug: "novotel-port-harcourt",
-  title: "Novotel Port Harcourt",
+  title: "Gordonsville Escape Boutique Hotel ans Spa",
   description: "4-star hotel with pool, gym and conference center.",
   image: "/rivers1.jpg",
   rating: 4.7,
   price: 45000,
   location: "Rivers",
-  images: ["/rivers1.jpg", "/rivers1b.jpg", "/rivers1c.jpg"],
+  images: ["/rivers1.jpg", "/rivers1b.jpg", "/rivers1c.jpg", "/rivers1d.jpg"],
   amenities: ["Pool", "Gym", "Conference Center", "Restaurant", "Free WiFi"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Accor property at 50 Azikiwe Rd, Port Harcourt. Top business hotel. Book: booking.com/hotel/ng/novotel-ph"
@@ -1360,13 +1316,13 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 93,
   slug: "protea-hotel-port-harcourt",
-  title: "Protea Hotel Port Harcourt",
+  title: "Swiss International Mabisel Port Harcourt",
   description: "Marriott hotel with river views and spa.",
   image: "/rivers2.jpg",
   rating: 4.6,
   price: 42000,
   location: "Rivers",
-  images: ["/rivers2.jpg", "/rivers2b.jpg", "/rivers2c.jpg"],
+  images: ["/rivers2.jpg", "/rivers2b.jpg", "/rivers2c.jpg", "/rivers2d.jpg"],
   amenities: ["River View", "Spa", "Pool", "Restaurant", "Free WiFi"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Marriott at 24 Stadium Rd, Port Harcourt. Great river views. Book: booking.com/hotel/ng/protea-ph"
@@ -1380,7 +1336,7 @@ export const HOTEL_ROOMS_DATA = [
   rating: 4.3,
   price: 26000,
   location: "Rivers",
-  images: ["/rivers3.jpg", "/rivers3b.jpg", "/rivers3c.jpg"],
+  images: ["/rivers3.jpg", "/rivers3b.jpg", "/rivers3c.jpg", "/rivers3d.jpg"],
   amenities: ["Free WiFi", "Restaurant", "Parking", "24hr Service"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Affordable at 10 Ezimgbu Rd, Port Harcourt city center. Book: booking.com/hotel/ng/presidency-ph"
@@ -1390,13 +1346,13 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 95,
   slug: "giginya-corps-lodge-sokoto",
-  title: "Giginya Corps Lodge Sokoto",
+  title: "Giginya Hotel, Sokoto",
   description: "Government guest house with large compound and restaurant.",
   image: "/sokoto1.jpg",
   rating: 4.4,
   price: 22000,
   location: "Sokoto",
-  images: ["/sokoto1.jpg", "/sokoto1b.jpg", "/sokoto1c.jpg"],
+  images: ["/sokoto1.jpg", "/sokoto1b.jpg", "/sokoto1c.jpg",  "/5.jpg"],
   amenities: ["Large Compound", "Restaurant", "Free WiFi", "Parking"],
   specs: { guests: 3, bedrooms: 1, beds: 2, bathrooms: 1 },
   longDescription: "Best government lodge at Gusau Rd, Sokoto. Spacious rooms. Book: booking.com/hotel/ng/giginya-sokoto"
@@ -1404,13 +1360,13 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 96,
   slug: "africana-hotel-sokoto",
-  title: "Africana Hotel Sokoto",
+  title: "Dankani Guess Palace Hotel Sokoto",
   description: "Premium hotel with pool and conference facilities.",
   image: "/sokoto2.jpg",
   rating: 4.5,
   price: 28000,
   location: "Sokoto",
-  images: ["/sokoto2.jpg", "/sokoto2b.jpg", "/sokoto2c.jpg"],
+  images: ["/sokoto2.jpg", "/sokoto2b.jpg", "/sokoto2c.jpg", "/18.jpg"],
   amenities: ["Pool", "Conference Hall", "Restaurant", "Free WiFi"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Top hotel at Bello Rd, Sokoto city. Book: booking.com/hotel/ng/africana-sokoto"
@@ -1418,221 +1374,17 @@ export const HOTEL_ROOMS_DATA = [
 {
   id: 97,
   slug: "royal-hotel-sokoto",
-  title: "Royal Hotel Sokoto",
+  title: "Sokoto Guest Inn Ltd",
   description: "Budget hotel with clean rooms and 24hr service.",
   image: "/sokoto3.jpg",
   rating: 4.1,
   price: 17000,
   location: "Sokoto",
-  images: ["/sokoto3.jpg", "/sokoto3b.jpg", "/sokoto3c.jpg"],
+  images: ["/sokoto3.jpg", "/sokoto3b.jpg", "/sokoto3c.jpg","/17.jpg"],
   amenities: ["24hr Service", "Free WiFi", "Restaurant"],
   specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
   longDescription: "Affordable at Ahmadu Bello Way, Sokoto. Book: booking.com/hotel/ng/royal-sokoto"
 },
-
-// TARABA - 3 real hotels
-{
-  id: 98,
-  slug: "jolly-nyame-stadium-hotel-jalingo",
-  title: "Jolly Nyame Stadium Hotel Jalingo",
-  description: "Premium hotel with pool and event hall.",
-  image: "/taraba1.jpg",
-  rating: 4.5,
-  price: 26000,
-  location: "Taraba",
-  images: ["/taraba1.jpg", "/taraba1b.jpg", "/taraba1c.jpg"],
-  amenities: ["Pool", "Event Hall", "Restaurant", "Free WiFi"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Top hotel at ATC Rd, Jalingo. Good for government business. Book: booking.com/hotel/ng/jolly-nyame"
-},
-{
-  id: 99,
-  slug: "behanzi-hotel-jalingo",
-  title: "Behanzi Hotel Jalingo",
-  description: "Comfortable hotel with garden and restaurant.",
-  image: "/taraba2.jpg",
-  rating: 4.2,
-  price: 22000,
-  location: "Taraba",
-  images: ["/taraba2.jpg", "/taraba2b.jpg", "/taraba2c.jpg"],
-  amenities: ["Garden", "Restaurant", "Free WiFi", "Parking"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Peaceful stay at Kona Rd, Jalingo. Book: booking.com/hotel/ng/behanzi-jalingo"
-},
-{
-  id: 100,
-  slug: "de-galaxy-hotel-jalingo",
-  title: "De Galaxy Hotel Jalingo",
-  description: "Budget hotel with clean rooms and good service.",
-  image: "/taraba3.jpg",
-  rating: 4.0,
-  price: 16000,
-  location: "Taraba",
-  images: ["/taraba3.jpg", "/taraba3b.jpg", "/taraba3c.jpg"],
-  amenities: ["Free WiFi", "Restaurant", "Parking"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Affordable at Barde Way, Jalingo city center. Book: booking.com/hotel/ng/de-galaxy-jalingo"
-},
-
-// YOBE - 3 real hotels
-{
-  id: 101,
-  slug: "premium-palace-hotel-damaturu",
-  title: "Premium Palace Hotel Damaturu",
-  description: "Premium hotel with conference hall and restaurant.",
-  image: "/yobe1.jpg",
-  rating: 4.5,
-  price: 26000,
-  location: "Yobe",
-  images: ["/yobe1.jpg", "/yobe1b.jpg", "/yobe1c.jpg"],
-  amenities: ["Conference Hall", "Restaurant", "Free WiFi", "Parking"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Best hotel at Maiduguri Rd, Damaturu. Book: booking.com/hotel/ng/premium-palace-damaturu"
-},
-{
-  id: 102,
-  slug: "royal-springs-hotel-potiskum",
-  title: "Royal Springs Hotel Potiskum",
-  description: "Comfortable hotel with garden and clean rooms.",
-  image: "/yobe2.jpg",
-  rating: 4.2,
-  price: 22000,
-  location: "Yobe",
-  images: ["/yobe2.jpg", "/yobe2b.jpg", "/yobe2c.jpg"],
-  amenities: ["Garden", "Restaurant", "Free WiFi", "Parking"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Good stay at Gashua Rd, Potiskum. Book: booking.com/hotel/ng/royal-springs-potiskum"
-},
-{
-  id: 103,
-  slug: "nile-hotel-damaturu",
-  title: "Nile Hotel Damaturu",
-  description: "Budget hotel with 24hr power and service.",
-  image: "/yobe3.jpg",
-  rating: 4.0,
-  price: 17000,
-  location: "Yobe",
-  images: ["/yobe3.jpg", "/yobe3b.jpg", "/yobe3c.jpg"],
-  amenities: ["24hr Power", "Free WiFi", "Restaurant"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Affordable at Kano Rd, Damaturu for short stays. Book: booking.com/hotel/ng/nile-damaturu"
-},
-
-// ZAMFARA - 3 real hotels
-{
-  id: 104,
-  slug: "royal-valley-hotel-gusau",
-  title: "Royal Valley Hotel Gusau",
-  description: "Premium hotel with pool and conference facilities.",
-  image: "/zamfara1.jpg",
-  rating: 4.5,
-  price: 28000,
-  location: "Zamfara",
-  images: ["/zamfara1.jpg", "/zamfara1b.jpg", "/zamfara1c.jpg"],
-  amenities: ["Pool", "Conference Hall", "Restaurant", "Free WiFi"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Best hotel at Sokoto Rd, Gusau. Good for business. Book: booking.com/hotel/ng/royal-valley-gusau"
-},
-{
-  id: 105,
-  slug: "civilli-hotel-gusau",
-  title: "Civilli Hotel Gusau",
-  description: "Comfortable hotel with restaurant and parking.",
-  image: "/zamfara2.jpg",
-  rating: 4.2,
-  price: 22000,
-  location: "Zamfara",
-  images: ["/zamfara2.jpg", "/zamfara2b.jpg", "/zamfara2c.jpg"],
-  amenities: ["Restaurant", "Parking", "Free WiFi", "24hr Service"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Clean rooms at Kaura Namoda Rd, Gusau. Book: booking.com/hotel/ng/civilli-gusau"
-},
-{
-  id: 106,
-  slug: "unity-palace-hotel-gusau",
-  title: "Unity Palace Hotel Gusau",
-  description: "Budget hotel with clean rooms and good service.",
-  image: "/zamfara3.jpg",
-  rating: 4.0,
-  price: 16000,
-  location: "Zamfara",
-  images: ["/zamfara3.jpg", "/zamfara3b.jpg", "/zamfara3c.jpg"],
-  amenities: ["Free WiFi", "Restaurant", "Parking"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Affordable stay at Ahmadu Bello Way, Gusau. Book: booking.com/hotel/ng/unity-palace-gusau"
-},
-
-// FINAL 5 hotels to complete 111 total
-{
-  id: 107,
-  slug: "radisson-blu-abuja",
-  title: "Radisson Blu Hotel Abuja",
-  description: "5-star hotel with rooftop pool and marina views.",
-  image: "/abuja4.jpg",
-  rating: 4.8,
-  price: 90000,
-  location: "Abuja FCT",
-  images: ["/abuja4.jpg", "/abuja4b.jpg", "/abuja4c.jpg"],
-  amenities: ["Rooftop Pool", "Marina View", "Spa", "Gym", "Free WiFi"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Luxury at 31 Samuel Manuwa St, Victoria Island. Overlooks Eko Atlantic. Book: booking.com/hotel/ng/radisson-blu-abuja"
-},
-{
-  id: 108,
-  slug: "sheraton-lagos-hotel",
-  title: "Sheraton Lagos Hotel",
-  description: "Marriott 5-star hotel with pool and convention center.",
-  image: "/lagos4.jpg",
-  rating: 4.7,
-  price: 70000,
-  location: "Lagos",
-  images: ["/lagos4.jpg", "/lagos4b.jpg", "/lagos4c.jpg"],
-  amenities: ["Pool", "Convention Center", "Spa", "Restaurant", "Free WiFi"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Marriott property at 30 Mobolaji Bank Anthony Way, Ikeja. Book: booking.com/hotel/ng/sheraton-lagos"
-},
-{
-  id: 109,
-  slug: "wells-carthay-hotel-port-harcourt",
-  title: "Wells Carthay Hotel Port Harcourt",
-  description: "4-star hotel with gym and rooftop restaurant.",
-  image: "/rivers4.jpg",
-  rating: 4.6,
-  price: 38000,
-  location: "Rivers",
-  images: ["/rivers4.jpg", "/rivers4b.jpg", "/rivers4c.jpg"],
-  amenities: ["Gym", "Rooftop Restaurant", "Pool", "Free WiFi"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Modern hotel at 24 Aba Rd, Port Harcourt. Book: booking.com/hotel/ng/wells-carthay"
-},
-{
-  id: 110,
-  slug: "orchid-hotel-benin",
-  title: "Orchid Hotel Benin",
-  description: "Luxury hotel with pool and conference facilities.",
-  image: "/edo4.jpg",
-  rating: 4.6,
-  price: 35000,
-  location: "Edo",
-  images: ["/edo4.jpg", "/edo4b.jpg", "/edo4c.jpg"],
-  amenities: ["Pool", "Conference Hall", "Restaurant", "Free WiFi", "Spa"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Top hotel at 58 Airport Rd, Benin City. Book: booking.com/hotel/ng/orchid-benin"
-},
-{
-  id: 111,
-  slug: "villa-rosa-hotel-enugu",
-  title: "Villa Rosa Hotel Enugu",
-  description: "Boutique hotel with garden and modern rooms.",
-  image: "/enugu4.jpg",
-  rating: 4.4,
-  price: 28000,
-  location: "Enugu",
-  images: ["/enugu4.jpg", "/enugu4b.jpg", "/enugu4c.jpg"],
-  amenities: ["Garden", "Restaurant", "Free WiFi", "Parking"],
-  specs: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1 },
-  longDescription: "Stylish boutique at 2 Villa Rosa Ave, Enugu GRA. Book: booking.com/hotel/ng/villa-rosa-enugu"
-}
 ];
 
 

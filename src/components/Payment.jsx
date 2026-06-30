@@ -43,7 +43,7 @@ export default function Payment() {
   return (
     <div className="payment-page">
        <button
-    className="back-btn"
+    className="back-botton"
     onClick={() => navigate(-1)}
   >
     ← Back
@@ -177,65 +177,7 @@ export default function Payment() {
 
         {/* RIGHT SIDE */}
 
-        <div className="booking-summary">
-
-          <h2>Booking Summary</h2>
-
-          {bookingData.image && (
-            <img
-              src={bookingData.image}
-              alt={bookingData.hotelName}
-            />
-          )}
-
-          <h3>{bookingData.hotelName}</h3>
-
-          <div className="summary-item">
-            <span>Guest</span>
-            <span>
-              {formData.firstName}
-            </span>
-          </div>
-
-          <div className="summary-item">
-            <span>Room Price</span>
-            <span>
-              ${bookingData.pricePerNight}
-            </span>
-          </div>
-
-          <div className="summary-item">
-            <span>Nights</span>
-            <span>
-              {bookingData.nights}
-            </span>
-          </div>
-
-          <div className="summary-item">
-            <span>Room Total</span>
-            <span>
-              ${totalRoomPrice.toFixed(2)}
-            </span>
-          </div>
-
-          <div className="summary-item">
-            <span>Taxes & Fees</span>
-            <span>
-              ${bookingData.taxesAndFees.toFixed(2)}
-            </span>
-          </div>
-
-          <hr />
-
-          <div className="summary-item total">
-            <span>Total Amount</span>
-            <span>
-              ${totalAmount.toFixed(2)}
-            </span>
-          </div>
-
-        </div>
-
+        
       </div>
 
     </div>

@@ -263,6 +263,16 @@ background: #121212;
   top: -1px;
   right: -2;
   animation: pulse 2s infinite;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 
 }
 
@@ -408,6 +418,9 @@ color: #fff;
   transition: var(--transition-smooth);
 }
 
+
+
+
 .web-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
@@ -536,12 +549,27 @@ color: #fff;
 
 
 .price-amount {
+ font-size: 1.05rem !important;
+  font-weight: 500;
+  color:#131313;
+  letter-spacing: -0.02em;
+}
+
+
+.dark  .price-amount {
   font-size:  1.05rem ;
   font-weight: 700;
   color:#ffff;
   letter-spacing: -0.02em;
 }
 
+.card-price-label {
+  color:#131313;
+  font-size: 0.85rem;
+}
+
+
+.dark  
 .card-price-label {
   color:#ffff;
   font-size: 0.85rem;
@@ -739,7 +767,7 @@ color: #fff;
 
   /* Floating search bar  */
   .input-box {
-    width: 90%;
+    width: 100%;
     padding: 16px 50px 16px 52px;
     font-size: 1rem;
     border: none;
@@ -802,6 +830,7 @@ color: #fff;
 .card-favorite-btn.active {
   color: #FF4B4B;
 }
+
 
 
 }

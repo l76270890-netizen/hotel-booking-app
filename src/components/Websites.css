@@ -311,6 +311,7 @@ body.dark{
 .dark .web-card {
   background: #1E1E1E;
   color: white;
+  border: 1px #2e2e2e solid;
 }
 
 .dark .card-content p {

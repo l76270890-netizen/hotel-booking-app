@@ -27,6 +27,12 @@ export default function BookingSummery() {
 
   return (
     <div className="booking-container">
+      <button
+    className="back-botton"
+    onClick={() => navigate(-1)}
+  >
+    ← Back
+  </button>
       <h1 className="booking-title">Review Your Booking</h1>
       <div className="booking-layout">
         
